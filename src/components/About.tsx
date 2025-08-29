@@ -40,15 +40,14 @@ const About = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-foreground">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed">
-              As a dedicated cybersecurity analyst, I focus on practical, hands-on security work. 
-              My expertise spans from developing exploits for known CVEs to building comprehensive 
-              home lab environments for security testing and skill development.
+              Hi there, and thanks for stopping by! My journey into cybersecurity began with a lifelong 
+              passion for IT and a natural curiosity for analyzing how things work. This drive eventually 
+              led me to a career as a cybersecurity analyst.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Through continuous learning and real-world application, I've developed a deep 
-              understanding of security vulnerabilities, threat vectors, and defensive strategies. 
-              My work includes breach simulation, detection engineering, and security analysis 
-              using industry-standard tools and methodologies.
+              For the past two years, I've gained hands-on experience in threat intelligence, digital 
+              forensics, and Security Operations Center (SOC) workflows. My goal is to turn raw data 
+              into actionable insights and build robust, auditable security systems.
             </p>
           </div>
           

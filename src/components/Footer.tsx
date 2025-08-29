@@ -50,7 +50,9 @@ const Footer = () => {
                 <Github className="w-5 h-5 text-cyber-blue" />
               </a>
               <a
-                href="#contact"
+                href="https://www.linkedin.com/in/nicholasoyaro"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-cyber-blue/20 rounded-lg flex items-center justify-center hover:bg-cyber-blue/30 transition-colors"
               >
                 <Linkedin className="w-5 h-5 text-cyber-blue" />
