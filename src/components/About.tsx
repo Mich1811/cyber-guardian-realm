@@ -5,13 +5,13 @@ const About = () => {
   const specializations = [
     {
       icon: Shield,
-      title: 'Web Security',
-      description: 'Identifying and mitigating vulnerabilities in web applications, conducting thorough security assessments.'
+      title: 'Risk Management',
+      description: 'Identifying, assessing, and mitigating operational and cybersecurity risks across organizations.'
     },
     {
       icon: Target,
-      title: 'Penetration Testing',
-      description: 'Simulating cyber attacks to test security systems and provide actionable remediation strategies.'
+      title: 'Compliance & Governance',
+      description: 'Ensuring adherence to regulatory frameworks and implementing robust security governance policies.'
     },
     {
       icon: Search,
@@ -20,8 +20,8 @@ const About = () => {
     },
     {
       icon: Code,
-      title: 'CVE Research',
-      description: 'Researching and developing exploits for known vulnerabilities to better understand security risks.'
+      title: 'Strategic Operations',
+      description: 'Managing complex projects and vendor relationships while optimizing operational efficiency.'
     }
   ];
 
@@ -31,8 +31,8 @@ const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate cybersecurity professional with hands-on experience in threat detection, 
-            security analysis, and vulnerability research.
+            Diligent professional with over 5 years of experience in risk management, compliance, 
+            and strategic operations, now applying this expertise to cybersecurity and digital asset protection.
           </p>
         </div>
 
@@ -59,8 +59,8 @@ const About = () => {
                     <Shield className="w-6 h-6 text-cyber-blue" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Security Focus</h4>
-                    <p className="text-sm text-muted-foreground">Practical security implementation</p>
+                    <h4 className="font-semibold text-foreground">Risk & Compliance Focus</h4>
+                    <p className="text-sm text-muted-foreground">Strategic risk management expertise</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -68,8 +68,8 @@ const About = () => {
                     <Target className="w-6 h-6 text-cyber-glow" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Hands-on Experience</h4>
-                    <p className="text-sm text-muted-foreground">Real-world security testing</p>
+                    <h4 className="font-semibold text-foreground">5+ Years Experience</h4>
+                    <p className="text-sm text-muted-foreground">Operations and project management</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -77,8 +77,8 @@ const About = () => {
                     <Code className="w-6 h-6 text-cyber-accent" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Research & Development</h4>
-                    <p className="text-sm text-muted-foreground">CVE analysis and exploit development</p>
+                    <h4 className="font-semibold text-foreground">Continuous Learning</h4>
+                    <p className="text-sm text-muted-foreground">Cybersecurity transition & growth</p>
                   </div>
                 </div>
               </div>

@@ -16,94 +16,92 @@ import {
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Security Testing',
+      title: 'Cybersecurity Core',
       icon: Shield,
       skills: [
-        'Penetration Testing',
-        'Vulnerability Assessment',
-        'Web Application Security',
-        'Network Security Testing',
-        'Social Engineering',
-        'Wireless Security'
+        'Threat Mitigation',
+        'Digital Asset Protection',
+        'Security Governance',
+        'Risk Management',
+        'Compliance Monitoring',
+        'Disaster Recovery Planning'
       ],
       color: 'cyber-blue'
     },
     {
-      title: 'Tools & Platforms',
+      title: 'Project & Operations',
       icon: Terminal,
       skills: [
-        'Kali Linux',
-        'Burp Suite',
-        'Metasploit',
-        'Nmap',
-        'Wireshark',
-        'OWASP ZAP',
-        'Nessus',
-        'Wazuh SIEM'
+        'Project Management',
+        'Project Coordination',
+        'Strategic Planning',
+        'Data Analysis',
+        'Operations Management',
+        'Stakeholder Management'
       ],
       color: 'cyber-glow'
     },
     {
-      title: 'Programming & Scripting',
-      icon: Code,
+      title: 'Risk & Compliance',
+      icon: Lock,
       skills: [
-        'Python',
-        'Bash/Shell Scripting',
-        'PowerShell',
-        'JavaScript',
-        'SQL',
-        'Regular Expressions'
+        'Contract Management',
+        'Vendor Management',
+        'Financial Management',
+        'Budget Administration',
+        'Compliance Frameworks',
+        'Audit Support'
       ],
       color: 'cyber-accent'
     },
     {
-      title: 'Threat Intelligence',
+      title: 'Data & Analytics',
       icon: Search,
       skills: [
-        'Threat Hunting',
-        'Incident Response',
-        'Malware Analysis',
-        'OSINT',
-        'IOC Analysis',
-        'Threat Modeling'
+        'Data Analysis',
+        'Market Research',
+        'Report Generation',
+        'Performance Metrics',
+        'Business Intelligence',
+        'Trend Analysis'
       ],
       color: 'cyber-blue'
     },
     {
-      title: 'Infrastructure Security',
+      title: 'Supply Chain Security',
       icon: Server,
       skills: [
-        'Network Architecture',
-        'Firewall Configuration',
-        'IDS/IPS Systems',
-        'Log Analysis',
-        'Virtualization Security',
-        'Cloud Security'
+        'Supplier Relationship Management',
+        'Third-party Risk Assessment',
+        'Procurement Security',
+        'Vendor Security Evaluation',
+        'Supply Chain Integrity',
+        'Contract Risk Mitigation'
       ],
       color: 'cyber-glow'
     },
     {
-      title: 'Compliance & Frameworks',
-      icon: Lock,
+      title: 'Leadership & Communication',
+      icon: Network,
       skills: [
-        'NIST Framework',
-        'OWASP Top 10',
-        'ISO 27001',
-        'Risk Assessment',
-        'Security Policies',
-        'Audit Preparation'
+        'Team Leadership',
+        'Cross-functional Collaboration',
+        'Stakeholder Communication',
+        'Training & Development',
+        'Process Optimization',
+        'Strategic Negotiation'
       ],
       color: 'cyber-accent'
     }
   ];
 
   const certifications = [
-    'Certified Ethical Hacker (CEH)',
-    'CompTIA Security+',
-    'CISSP Associate',
-    'OSCP (In Progress)',
-    'CySA+ (Planned)',
-    'GCIH (Planned)'
+    'Google Cybersecurity Certificate',
+    'Google Data Analytics Professional Certificate',
+    'Cybersecurity Bootcamp - Moringa School (Ongoing)',
+    'Bachelor of Commerce - University of Nairobi',
+    'ACCA - Strathmore University',
+    'KISM Membership'
   ];
 
   return (
@@ -154,12 +152,12 @@ const Skills = () => {
             </h3>
             <div className="space-y-4">
               {[
-                { name: 'Web Application Security', level: 90 },
-                { name: 'Penetration Testing', level: 85 },
-                { name: 'Threat Intelligence', level: 80 },
-                { name: 'Incident Response', level: 75 },
-                { name: 'Network Security', level: 85 },
-                { name: 'Vulnerability Research', level: 80 }
+                { name: 'Risk Management', level: 95 },
+                { name: 'Project Management', level: 90 },
+                { name: 'Compliance & Governance', level: 85 },
+                { name: 'Vendor & Contract Management', level: 90 },
+                { name: 'Data Analysis', level: 80 },
+                { name: 'Cybersecurity Fundamentals', level: 75 }
               ].map((area, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">

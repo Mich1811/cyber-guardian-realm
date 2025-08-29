@@ -36,8 +36,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'nicholas.oyaro@example.com',
-      href: 'mailto:nicholas.oyaro@example.com'
+      value: 'nickmichira@gmail.com',
+      href: 'mailto:nickmichira@gmail.com'
+    },
+    {
+      icon: Phone,
+      label: 'Phone',
+      value: '+254 720 075 756',
+      href: 'tel:+254720075756'
     },
     {
       icon: Github,
@@ -48,13 +54,13 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'Connect on LinkedIn',
-      href: '#'
+      value: 'linkedin.com/in/nicholasoyaro',
+      href: 'https://www.linkedin.com/in/nicholasoyaro'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Available for Remote Work',
+      value: 'Nairobi, Kenya',
       href: null
     }
   ];
@@ -173,7 +179,7 @@ const Contact = () => {
                     </a>
                   </Button>
                   <Button variant="outline" className="w-full justify-start border-cyber-blue/50" asChild>
-                    <a href="#" className="flex items-center space-x-3">
+                    <a href="https://www.linkedin.com/in/nicholasoyaro" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3">
                       <Linkedin className="w-5 h-5" />
                       <span>LinkedIn Profile</span>
                     </a>
@@ -185,11 +191,11 @@ const Contact = () => {
             <div className="cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50">
               <h3 className="text-lg font-bold text-foreground mb-3">Open to Opportunities</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                Currently seeking cybersecurity roles in penetration testing, security analysis, 
-                and threat intelligence. Available for full-time positions and consulting projects.
+                Currently seeking cybersecurity roles in SOC operations, risk management, 
+                and compliance. Available for full-time positions and consulting projects.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['Penetration Testing', 'Security Analysis', 'Threat Intelligence', 'Remote Work'].map((tag) => (
+                {['Risk Management', 'Compliance', 'Project Management', 'Remote Work'].map((tag) => (
                   <span key={tag} className="px-3 py-1 bg-cyber-blue/20 text-cyber-glow text-xs rounded-full border border-cyber-blue/30">
                     {tag}
                   </span>
