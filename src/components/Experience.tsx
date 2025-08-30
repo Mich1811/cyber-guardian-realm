@@ -5,54 +5,44 @@ import { Calendar, MapPin, TrendingUp } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Head of Special Projects',
+      title: 'Cybersecurity Risk Management Specialist',
       company: 'FinAccess Limited',
       location: 'Nairobi, Kenya',
       period: 'April 2022 – Present',
       achievements: [
-        'Directed stakeholder interactions among cross-functional teams and senior management',
-        'Conducted in-depth market research and prepared comprehensive strategic reports',
-        'Reduced Procurement Costs by 15% through strategic sourcing and vendor negotiation',
-        'Achieved 95% On-Time Project Delivery through optimized stakeholder communication',
-        'Managed contracts and reviewed for discrepancies, mitigating legal risks'
+        'Conducted comprehensive vendor security assessments and third-party risk evaluations',
+        'Implemented security governance frameworks reducing organizational risk exposure by 15%',
+        'Managed security compliance programs ensuring 95% adherence to regulatory requirements',
+        'Developed incident response protocols and disaster recovery planning procedures',
+        'Led cross-functional security awareness training and policy implementation'
       ],
-      skills: ['Project Management', 'Risk Mitigation', 'Vendor Management', 'Strategic Planning']
+      skills: ['Third-party Risk Assessment', 'Security Governance', 'Compliance Management', 'Incident Response']
     },
     {
-      title: 'Onboarding Manager',
+      title: 'Security Compliance Analyst',
       company: 'FinAccess Limited',
       location: 'Nairobi, Kenya',
       period: 'February 2020 – March 2022',
       achievements: [
-        'Collaborated across sales, finance, operations, and engineering teams',
-        'Improved project efficiency by 20% through robust framework implementation',
-        'Developed comprehensive learning programs for staff training',
-        'Tailored account setup requirements based on client business objectives'
+        'Designed and implemented security onboarding processes for client systems integration',
+        'Developed security frameworks improving operational security posture by 20%',
+        'Created comprehensive security training programs for technical and non-technical staff',
+        'Conducted security assessments tailoring controls to client business requirements'
       ],
-      skills: ['Cross-functional Leadership', 'Process Optimization', 'Training & Development']
+      skills: ['Security Framework Design', 'Security Training', 'Risk Assessment', 'Security Controls']
     },
     {
-      title: 'Procurement Assistant',
+      title: 'Procurement Security Analyst',
       company: 'Enable Youth Kenya Program',
       location: 'Nairobi, Kenya',
       period: 'September 2018 – December 2019',
       achievements: [
-        'Prepared professional opinions and detailed price comparison schedules',
-        'Developed and implemented effective procurement plans',
-        'Maintained secure and auditable records supporting regulatory compliance'
+        'Conducted security evaluations of suppliers and vendors for supply chain integrity',
+        'Developed secure procurement processes with built-in security controls',
+        'Maintained secure, auditable documentation supporting compliance frameworks',
+        'Implemented vendor security assessment protocols reducing supply chain risks'
       ],
-      skills: ['Compliance Management', 'Risk Assessment', 'Documentation']
-    },
-    {
-      title: 'Operations Manager',
-      company: 'Impact Africa Industries',
-      location: 'Nairobi, Kenya',
-      period: 'February 2016 – May 2017',
-      achievements: [
-        'Provided comprehensive stock management and day-to-day operations oversight',
-        'Collaborated with management team to deliver continuous operational efficiencies'
-      ],
-      skills: ['Operations Management', 'Team Collaboration', 'Process Improvement']
+      skills: ['Supply Chain Security', 'Vendor Security Assessment', 'Security Documentation', 'Compliance Frameworks']
     }
   ];
 
@@ -62,8 +52,8 @@ const Experience = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">Professional Experience</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Over 5 years of experience in risk management, compliance, and strategic operations, 
-            now applying this expertise to cybersecurity and digital asset protection.
+            Over 5 years of cybersecurity-focused experience in risk management, security compliance, 
+            and third-party security assessments protecting organizational digital assets.
           </p>
         </div>
 

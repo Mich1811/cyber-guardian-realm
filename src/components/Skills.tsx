@@ -19,25 +19,25 @@ const Skills = () => {
       title: 'Cybersecurity Core',
       icon: Shield,
       skills: [
-        'Threat Mitigation',
-        'Digital Asset Protection',
+        'Threat Intelligence',
+        'Digital Forensics',
         'Security Governance',
-        'Risk Management',
-        'Compliance Monitoring',
-        'Disaster Recovery Planning'
+        'Risk Assessment',
+        'Incident Response',
+        'Vulnerability Management'
       ],
       color: 'cyber-blue'
     },
     {
-      title: 'Project & Operations',
+      title: 'SOC Operations',
       icon: Terminal,
       skills: [
-        'Project Management',
-        'Project Coordination',
-        'Strategic Planning',
-        'Data Analysis',
-        'Operations Management',
-        'Stakeholder Management'
+        'Security Monitoring',
+        'SIEM Management',
+        'Threat Hunting',
+        'Log Analysis',
+        'Security Alerting',
+        'Threat Detection'
       ],
       color: 'cyber-glow'
     },
@@ -45,25 +45,25 @@ const Skills = () => {
       title: 'Risk & Compliance',
       icon: Lock,
       skills: [
-        'Contract Management',
-        'Vendor Management',
-        'Financial Management',
-        'Budget Administration',
-        'Compliance Frameworks',
-        'Audit Support'
+        'GRC Frameworks',
+        'Security Auditing',
+        'Compliance Management',
+        'Risk Mitigation',
+        'Security Policies',
+        'Regulatory Compliance'
       ],
       color: 'cyber-accent'
     },
     {
-      title: 'Data & Analytics',
+      title: 'Threat Analysis',
       icon: Search,
       skills: [
-        'Data Analysis',
-        'Market Research',
-        'Report Generation',
-        'Performance Metrics',
-        'Business Intelligence',
-        'Trend Analysis'
+        'Malware Analysis',
+        'IOC Investigation',
+        'Attack Vector Analysis',
+        'Security Reporting',
+        'Threat Intelligence',
+        'Forensic Analysis'
       ],
       color: 'cyber-blue'
     },
@@ -71,27 +71,14 @@ const Skills = () => {
       title: 'Supply Chain Security',
       icon: Server,
       skills: [
-        'Supplier Relationship Management',
         'Third-party Risk Assessment',
-        'Procurement Security',
         'Vendor Security Evaluation',
         'Supply Chain Integrity',
-        'Contract Risk Mitigation'
+        'Security Due Diligence',
+        'Procurement Security',
+        'Contract Security Review'
       ],
       color: 'cyber-glow'
-    },
-    {
-      title: 'Leadership & Communication',
-      icon: Network,
-      skills: [
-        'Team Leadership',
-        'Cross-functional Collaboration',
-        'Stakeholder Communication',
-        'Training & Development',
-        'Process Optimization',
-        'Strategic Negotiation'
-      ],
-      color: 'cyber-accent'
     }
   ];
 
@@ -110,8 +97,8 @@ const Skills = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">Technical Skills</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive expertise across cybersecurity domains, from hands-on testing 
-            to strategic security planning and implementation.
+            Specialized cybersecurity expertise in threat intelligence, digital forensics, 
+            and SOC operations with focus on actionable security insights.
           </p>
         </div>
 
@@ -152,12 +139,12 @@ const Skills = () => {
             </h3>
             <div className="space-y-4">
               {[
-                { name: 'Risk Management', level: 95 },
-                { name: 'Project Management', level: 90 },
-                { name: 'Compliance & Governance', level: 85 },
-                { name: 'Vendor & Contract Management', level: 90 },
-                { name: 'Data Analysis', level: 80 },
-                { name: 'Cybersecurity Fundamentals', level: 75 }
+                { name: 'Threat Intelligence', level: 85 },
+                { name: 'Digital Forensics', level: 80 },
+                { name: 'SOC Operations', level: 90 },
+                { name: 'Risk Assessment', level: 95 },
+                { name: 'Incident Response', level: 85 },
+                { name: 'Security Compliance', level: 90 }
               ].map((area, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
