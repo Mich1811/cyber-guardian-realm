@@ -5,44 +5,76 @@ import { Calendar, MapPin, TrendingUp } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Cybersecurity Risk Management Specialist',
+      title: 'Head of Special Projects',
       company: 'FinAccess Limited',
       location: 'Nairobi, Kenya',
       period: 'April 2022 – Present',
       achievements: [
-        'Conducted comprehensive vendor security assessments and third-party risk evaluations',
-        'Implemented security governance frameworks reducing organizational risk exposure by 15%',
-        'Managed security compliance programs ensuring 95% adherence to regulatory requirements',
-        'Developed incident response protocols and disaster recovery planning procedures',
-        'Led cross-functional security awareness training and policy implementation'
+        'Directed and streamlined interactions among stakeholders, cross-functional teams, and senior management',
+        'Conducted in-depth market research and prepared comprehensive reports to guide project strategies',
+        'Reduced Procurement Costs by 15% through strategic sourcing and negotiation with reliable suppliers and vendors',
+        'Managed contracts and reviewed them for discrepancies, mitigating legal risks and ensuring compliance',
+        'Achieved 95% On-Time Project Delivery by optimizing stakeholder communication and managing cross-functional teams effectively'
       ],
-      skills: ['Third-party Risk Assessment', 'Security Governance', 'Compliance Management', 'Incident Response']
+      skills: ['Project Management', 'Stakeholder Management', 'Contract Management', 'Strategic Sourcing', 'Compliance']
     },
     {
-      title: 'Security Compliance Analyst',
+      title: 'Onboarding Manager',
       company: 'FinAccess Limited',
       location: 'Nairobi, Kenya',
       period: 'February 2020 – March 2022',
       achievements: [
-        'Designed and implemented security onboarding processes for client systems integration',
-        'Developed security frameworks improving operational security posture by 20%',
-        'Created comprehensive security training programs for technical and non-technical staff',
-        'Conducted security assessments tailoring controls to client business requirements'
+        'Collaborated with sales, finance, operations, and engineering teams to ensure a seamless client onboarding process',
+        'Developed a deep understanding of client business and operational objectives to tailor account setup requirements',
+        'Improved project efficiency by 20% by implementing a robust framework that optimized coordination between senior management and teams',
+        'Designed, developed, and delivered learning programs, training top management and staff on system usage'
       ],
-      skills: ['Security Framework Design', 'Security Training', 'Risk Assessment', 'Security Controls']
+      skills: ['Client Onboarding', 'Cross-functional Collaboration', 'Training & Development', 'Process Optimization']
     },
     {
-      title: 'Procurement Security Analyst',
+      title: 'Procurement Assistant',
       company: 'Enable Youth Kenya Program',
       location: 'Nairobi, Kenya',
       period: 'September 2018 – December 2019',
       achievements: [
-        'Conducted security evaluations of suppliers and vendors for supply chain integrity',
-        'Developed secure procurement processes with built-in security controls',
-        'Maintained secure, auditable documentation supporting compliance frameworks',
-        'Implemented vendor security assessment protocols reducing supply chain risks'
+        'Prepared professional opinions and detailed price comparison schedules',
+        'Developed and implemented an effective procurement plan',
+        'Maintained secure and auditable records of procurement documents, supporting compliance with regulatory frameworks'
       ],
-      skills: ['Supply Chain Security', 'Vendor Security Assessment', 'Security Documentation', 'Compliance Frameworks']
+      skills: ['Procurement Planning', 'Price Analysis', 'Compliance Documentation', 'Vendor Management']
+    },
+    {
+      title: 'Procurement Assistant',
+      company: 'Kenya Climate Smart Agriculture Project',
+      location: 'Nairobi, Kenya',
+      period: 'January 2018 – August 2018',
+      achievements: [
+        'Managed the preparation of tender documents and actively contributed to all stages of the procurement process',
+        'Streamlined the opening, evaluation, and awarding of tenders to optimize procurement operations'
+      ],
+      skills: ['Tender Management', 'Procurement Process', 'Vendor Evaluation', 'Process Optimization']
+    },
+    {
+      title: 'Operations Manager',
+      company: 'Impact Africa Industries',
+      location: 'Nairobi, Kenya',
+      period: 'February 2016 – May 2017',
+      achievements: [
+        'Provided up-to-date stock records and took full responsibility for day-to-day operations',
+        'Worked alongside other managers to deliver continuous operational efficiencies'
+      ],
+      skills: ['Operations Management', 'Inventory Management', 'Process Improvement', 'Team Leadership']
+    },
+    {
+      title: 'Travel Consultant',
+      company: 'Outbox Travel Limited',
+      location: 'Nairobi, Kenya',
+      period: 'August 2012 – December 2015',
+      achievements: [
+        'Gained great interpersonal skills by managing and developing relationships with clients',
+        'Identified and made contact with potential customers, presenting appropriate solutions to secure sales'
+      ],
+      skills: ['Customer Relations', 'Sales', 'Client Management', 'Solution Presentation']
     }
   ];
 
@@ -52,8 +84,9 @@ const Experience = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">Professional Experience</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Over 5 years of cybersecurity-focused experience in risk management, security compliance, 
-            and third-party security assessments protecting organizational digital assets.
+            Over 10 years of progressive experience in project management, risk management, compliance, 
+            and strategic operations across various industries. Proven track record in stakeholder management, 
+            process optimization, and driving operational efficiencies.
           </p>
         </div>
 
