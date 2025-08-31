@@ -42,39 +42,6 @@ const Experience = () => {
         'Maintained secure and auditable records of procurement documents, supporting compliance with regulatory frameworks'
       ],
       skills: ['Procurement Planning', 'Price Analysis', 'Compliance Documentation', 'Vendor Management']
-    },
-    {
-      title: 'Procurement Assistant',
-      company: 'Kenya Climate Smart Agriculture Project',
-      location: 'Nairobi, Kenya',
-      period: 'January 2018 – August 2018',
-      achievements: [
-        'Managed the preparation of tender documents and actively contributed to all stages of the procurement process',
-        'Streamlined the opening, evaluation, and awarding of tenders to optimize procurement operations'
-      ],
-      skills: ['Tender Management', 'Procurement Process', 'Vendor Evaluation', 'Process Optimization']
-    },
-    {
-      title: 'Operations Manager',
-      company: 'Impact Africa Industries',
-      location: 'Nairobi, Kenya',
-      period: 'February 2016 – May 2017',
-      achievements: [
-        'Provided up-to-date stock records and took full responsibility for day-to-day operations',
-        'Worked alongside other managers to deliver continuous operational efficiencies'
-      ],
-      skills: ['Operations Management', 'Inventory Management', 'Process Improvement', 'Team Leadership']
-    },
-    {
-      title: 'Travel Consultant',
-      company: 'Outbox Travel Limited',
-      location: 'Nairobi, Kenya',
-      period: 'August 2012 – December 2015',
-      achievements: [
-        'Gained great interpersonal skills by managing and developing relationships with clients',
-        'Identified and made contact with potential customers, presenting appropriate solutions to secure sales'
-      ],
-      skills: ['Customer Relations', 'Sales', 'Client Management', 'Solution Presentation']
     }
   ];
 

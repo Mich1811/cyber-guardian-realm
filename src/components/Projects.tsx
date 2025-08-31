@@ -6,20 +6,6 @@ import { Github, ExternalLink, Shield, Server, Flag, Bug } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: 'CVE-2019-9053 Exploit Development',
-      description: 'Enhanced Python 3 exploit for CMS Made Simple vulnerability, compatible with CMSMS version 2.2.9 and below. Improved text encoding handling and Python 3 compatibility.',
-      icon: Bug,
-      technologies: ['Python 3', 'CVE Research', 'Exploit Development', 'Web Security'],
-      github: 'https://github.com/Mich1811/CVE-2019-9053-Exploit-Python-3',
-      category: 'Vulnerability Research',
-      highlights: [
-        'CVE-2019-9053 exploitation',
-        'Python 3 compatibility',
-        'Text encoding improvements',
-        'Security testing tool'
-      ]
-    },
-    {
       title: 'Cybersecurity Home Lab',
       description: 'Comprehensive home lab environment for breach simulations and detection skill building. Features host-only 10.10.10.0/24 network with Wazuh SIEM, DVWA targets, Windows 10 endpoint, and Kali Linux attacker machine.',
       icon: Server,
@@ -45,20 +31,6 @@ const Projects = () => {
         'Solution documentation',
         'Security methodology',
         'Knowledge sharing'
-      ]
-    },
-    {
-      title: 'Security Portfolio Website',
-      description: 'Professional cybersecurity portfolio showcasing projects, skills, and expertise in modern web technologies with security-focused design.',
-      icon: Shield,
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Web Security'],
-      github: 'https://github.com/Mich1811/nicholasoyaro.github.io',
-      category: 'Web Development',
-      highlights: [
-        'Modern web technologies',
-        'Security-focused design',
-        'Professional presentation',
-        'Portfolio showcase'
       ]
     }
   ];
