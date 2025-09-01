@@ -40,7 +40,7 @@ const About = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-foreground">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Hi there, and thanks for stopping by! My journey into cybersecurity began with a lifelong 
+              Hi there and thanks for stopping by! My journey into cybersecurity began with a lifelong 
               passion for IT and a natural curiosity for analyzing how things work. This drive eventually 
               led me to a career as a cybersecurity analyst.
             </p>
