@@ -20,8 +20,8 @@ const About = () => {
     },
     {
       icon: Code,
-      title: 'Strategic Operations',
-      description: 'Managing complex projects and vendor relationships while optimizing operational efficiency.'
+      title: 'Network Security',
+      description: 'Securing network infrastructure and implementing protective measures against cyber threats and vulnerabilities.'
     }
   ];
 
