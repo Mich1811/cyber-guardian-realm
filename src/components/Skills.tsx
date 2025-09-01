@@ -86,9 +86,7 @@ const Skills = () => {
     'Google Cybersecurity Certificate',
     'Google Data Analytics Professional Certificate',
     'Cybersecurity Bootcamp - Moringa School (Ongoing)',
-    'Bachelor of Commerce - University of Nairobi',
-    'ACCA - Strathmore University',
-    'KISM Membership'
+    'Arcx 101 Cyber Threat Intelligence'
   ];
 
   return (
