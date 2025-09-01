@@ -49,11 +49,11 @@ const Experience = () => {
     <section id="experience" className="py-24 bg-gradient-to-b from-cyber-dark/20 to-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">Professional Experience</h2>
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">Cybersecurity Experience</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Over 10 years of progressive experience in project management, risk management, compliance, 
-            and strategic operations across various industries. Proven track record in stakeholder management, 
-            process optimization, and driving operational efficiencies.
+            Over 5 years of progressive experience in cybersecurity, risk management, compliance, 
+            and strategic operations. Proven track record in security implementation, threat analysis, 
+            and building robust security frameworks across various industries.
           </p>
         </div>
 
