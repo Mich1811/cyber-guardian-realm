@@ -29,7 +29,16 @@ const Hero = () => {
           {/* Main heading */}
           <div className="space-y-4">
             <div className="flex items-center justify-center space-x-4 mb-6">
-              <Shield className="w-16 h-16 text-cyber-blue cyber-glow" />
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/cb7baea7-b4a1-42af-99f4-1da5acf09d57.png" 
+                  alt="Nicholas Oyaro - Cybersecurity Analyst" 
+                  className="w-32 h-32 rounded-full object-cover border-4 border-cyber-blue cyber-glow"
+                />
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-cyber-blue/20 rounded-full flex items-center justify-center border-2 border-cyber-blue">
+                  <Shield className="w-6 h-6 text-cyber-blue" />
+                </div>
+              </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               <span className="gradient-text">Nicholas Oyaro</span>

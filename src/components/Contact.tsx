@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Mail, Github, Linkedin, Download, MapPin, Phone } from 'lucide-react';
+import { Mail, Github, Linkedin, Download, MapPin, Phone, Shield } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -56,6 +56,12 @@ const Contact = () => {
       label: 'LinkedIn',
       value: 'linkedin.com/in/nicholasoyaro',
       href: 'https://www.linkedin.com/in/nicholasoyaro'
+    },
+    {
+      icon: Shield,
+      label: 'TryHackMe',
+      value: 'tryhackme.com/p/Nickmich0',
+      href: 'https://tryhackme.com/p/Nickmich0'
     },
     {
       icon: MapPin,
@@ -182,6 +188,12 @@ const Contact = () => {
                     <a href="https://www.linkedin.com/in/nicholasoyaro" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3">
                       <Linkedin className="w-5 h-5" />
                       <span>LinkedIn Profile</span>
+                    </a>
+                  </Button>
+                  <Button variant="outline" className="w-full justify-start border-cyber-blue/50" asChild>
+                    <a href="https://tryhackme.com/p/Nickmich0" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3">
+                      <Shield className="w-5 h-5" />
+                      <span>TryHackMe Profile</span>
                     </a>
                   </Button>
                 </div>

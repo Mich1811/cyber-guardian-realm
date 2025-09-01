@@ -46,8 +46,7 @@ const About = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               For the past two years, I've gained hands-on experience in threat intelligence, digital 
-              forensics, and Security Operations Center (SOC) workflows. My goal is to turn raw data 
-              into actionable insights and build robust, auditable security systems.
+              forensics, and Security Operations Center (SOC) workflows.
             </p>
           </div>
           
