@@ -66,19 +66,6 @@ const Skills = () => {
         'Forensic Analysis'
       ],
       color: 'cyber-blue'
-    },
-    {
-      title: 'Supply Chain Security',
-      icon: Server,
-      skills: [
-        'Third-party Risk Assessment',
-        'Vendor Security Evaluation',
-        'Supply Chain Integrity',
-        'Security Due Diligence',
-        'Procurement Security',
-        'Contract Security Review'
-      ],
-      color: 'cyber-glow'
     }
   ];
 
