@@ -48,7 +48,7 @@ const Hero = () => {
 
           {/* Expertise badges */}
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            {['CVE Research', 'Home Lab', 'CTF Champion', 'Security Analysis'].map((skill) => (
+            {['Penetration Testing', 'SIEM Analysis', 'Threat Intelligence', 'Security Analysis'].map((skill) => (
               <div key={skill} className="cyber-border rounded-full px-6 py-3 bg-card/50">
                 <span className="text-cyber-glow font-medium">{skill}</span>
               </div>
