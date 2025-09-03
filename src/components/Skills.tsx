@@ -79,7 +79,7 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 bg-gradient-to-b from-background to-cyber-dark/20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">Technical Skills</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Specialized cybersecurity expertise in threat intelligence, digital forensics, 
@@ -89,10 +89,10 @@ const Skills = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="cyber-glow bg-gradient-to-b from-card to-card/50 border-cyber-blue/30">
+            <Card key={index} className={`cyber-glow bg-gradient-to-b from-card to-card/50 border-cyber-blue/30 card-hover animate-stagger-${Math.min(index + 1, 4)}`}>
               <CardHeader>
                 <div className="flex items-center space-x-3">
-                  <div className={`w-12 h-12 bg-${category.color}/20 rounded-lg flex items-center justify-center`}>
+                  <div className={`w-12 h-12 bg-${category.color}/20 rounded-lg flex items-center justify-center hover-scale`}>
                     <category.icon className={`w-6 h-6 text-${category.color}`} />
                   </div>
                   <CardTitle className="text-lg font-bold text-foreground">{category.title}</CardTitle>
@@ -104,7 +104,7 @@ const Skills = () => {
                     <Badge 
                       key={skill} 
                       variant="outline" 
-                      className={`text-xs border-${category.color}/50 text-${category.color} hover:bg-${category.color}/10 transition-colors`}
+                      className={`text-xs border-${category.color}/50 text-${category.color} hover:bg-${category.color}/10 transition-colors hover-scale`}
                     >
                       {skill}
                     </Badge>

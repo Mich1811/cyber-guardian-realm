@@ -38,7 +38,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-gradient-to-b from-cyber-dark/20 to-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">Featured Projects</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Hands-on cybersecurity projects demonstrating practical skills in vulnerability research, 
@@ -48,11 +48,11 @@ const Projects = () => {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="cyber-glow bg-gradient-to-br from-card to-card/50 border-cyber-blue/30 h-full">
+            <Card key={index} className={`cyber-glow bg-gradient-to-br from-card to-card/50 border-cyber-blue/30 h-full card-hover glow-on-hover animate-stagger-${Math.min(index + 1, 4)}`}>
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-cyber-blue/20 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-cyber-blue/20 rounded-lg flex items-center justify-center hover-scale">
                       <project.icon className="w-6 h-6 text-cyber-blue" />
                     </div>
                     <div>
@@ -63,7 +63,7 @@ const Projects = () => {
                     </div>
                   </div>
                   <div className="flex space-x-2">
-                    <Button variant="ghost" size="icon" asChild>
+                    <Button variant="ghost" size="icon" asChild className="hover-scale">
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4" />
                       </a>
@@ -92,7 +92,7 @@ const Projects = () => {
                   <h4 className="font-semibold text-foreground mb-2">Technologies:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs border-cyber-blue/50 text-cyber-glow">
+                      <Badge key={tech} variant="outline" className="text-xs border-cyber-blue/50 text-cyber-glow hover-scale">
                         {tech}
                       </Badge>
                     ))}
@@ -103,8 +103,8 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="cyber" size="lg" asChild>
+        <div className="text-center mt-12 animate-slide-in-up">
+          <Button variant="cyber" size="lg" asChild className="hover-scale glow-on-hover">
             <a href="https://github.com/Mich1811" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
               <Github className="w-5 h-5" />
               <span>View All Projects on GitHub</span>

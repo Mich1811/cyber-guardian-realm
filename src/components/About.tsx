@@ -28,7 +28,7 @@ const About = () => {
   return (
     <section id="about" className="py-24 bg-gradient-to-b from-background to-cyber-dark/20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Diligent professional with over 5 years of experience in risk management, compliance, 
@@ -37,7 +37,7 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div className="space-y-6">
+          <div className="space-y-6 animate-slide-in-left">
             <h3 className="text-2xl font-bold text-foreground">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed">
               Hi there and thanks for stopping by! My journey into cybersecurity began with a lifelong 
@@ -50,10 +50,10 @@ const About = () => {
             </p>
           </div>
           
-          <div className="relative">
-            <div className="cyber-border rounded-lg p-8 bg-gradient-to-br from-card to-card/50">
+          <div className="relative animate-slide-in-right">
+            <div className="cyber-border rounded-lg p-8 bg-gradient-to-br from-card to-card/50 card-hover">
               <div className="space-y-4">
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 animate-stagger-1">
                   <div className="w-12 h-12 bg-cyber-blue/20 rounded-full flex items-center justify-center">
                     <Shield className="w-6 h-6 text-cyber-blue" />
                   </div>
@@ -62,7 +62,7 @@ const About = () => {
                     <p className="text-sm text-muted-foreground">Strategic risk management expertise</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 animate-stagger-2">
                   <div className="w-12 h-12 bg-cyber-glow/20 rounded-full flex items-center justify-center">
                     <Target className="w-6 h-6 text-cyber-glow" />
                   </div>
@@ -71,7 +71,7 @@ const About = () => {
                     <p className="text-sm text-muted-foreground">Operations and project management</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 animate-stagger-3">
                   <div className="w-12 h-12 bg-cyber-accent/20 rounded-full flex items-center justify-center">
                     <Code className="w-6 h-6 text-cyber-accent" />
                   </div>
@@ -87,9 +87,9 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {specializations.map((spec, index) => (
-            <Card key={index} className="cyber-glow bg-gradient-to-b from-card to-card/50 border-cyber-blue/30">
+            <Card key={index} className={`cyber-glow bg-gradient-to-b from-card to-card/50 border-cyber-blue/30 card-hover animate-stagger-${Math.min(index + 1, 4)}`}>
               <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-cyber-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-cyber-blue/20 rounded-full flex items-center justify-center mx-auto mb-4 hover-scale">
                   <spec.icon className="w-8 h-8 text-cyber-blue" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-3">{spec.title}</h3>
