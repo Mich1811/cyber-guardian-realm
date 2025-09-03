@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Mail, Github, Linkedin, Download, MapPin, Phone, Shield } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -33,36 +33,6 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'nickmichira@gmail.com',
-      href: 'mailto:nickmichira@gmail.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+254 720 075 756',
-      href: 'tel:+254720075756'
-    },
-    {
-      icon: Github,
-      label: 'GitHub',
-      value: 'github.com/Mich1811',
-      href: 'https://github.com/Mich1811'
-    },
-    {
-      icon: Linkedin,
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/nicholasoyaro',
-      href: 'https://www.linkedin.com/in/nicholasoyaro'
-    },
-    {
-      icon: Shield,
-      label: 'TryHackMe',
-      value: 'tryhackme.com/p/Nickmich0',
-      href: 'https://tryhackme.com/p/Nickmich0'
-    },
     {
       icon: MapPin,
       label: 'Location',
@@ -168,52 +138,6 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="cyber-glow bg-gradient-to-br from-card to-card/50 border-cyber-blue/30">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-4">Professional Resources</h3>
-                <div className="space-y-4">
-                  <Button variant="cyber" className="w-full justify-start" asChild>
-                    <a href="#" className="flex items-center space-x-3">
-                      <Download className="w-5 h-5" />
-                      <span>Download Resume (PDF)</span>
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="w-full justify-start border-cyber-blue/50" asChild>
-                    <a href="https://github.com/Mich1811" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3">
-                      <Github className="w-5 h-5" />
-                      <span>View GitHub Portfolio</span>
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="w-full justify-start border-cyber-blue/50" asChild>
-                    <a href="https://www.linkedin.com/in/nicholasoyaro" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3">
-                      <Linkedin className="w-5 h-5" />
-                      <span>LinkedIn Profile</span>
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="w-full justify-start border-cyber-blue/50" asChild>
-                    <a href="https://tryhackme.com/p/Nickmich0" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3">
-                      <Shield className="w-5 h-5" />
-                      <span>TryHackMe Profile</span>
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            <div className="cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50">
-              <h3 className="text-lg font-bold text-foreground mb-3">Open to Opportunities</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                Currently seeking cybersecurity roles in SOC operations, risk management, 
-                and compliance. Available for full-time positions and consulting projects.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {['Risk Management', 'Compliance', 'Project Management', 'Remote Work'].map((tag) => (
-                  <span key={tag} className="px-3 py-1 bg-cyber-blue/20 text-cyber-glow text-xs rounded-full border border-cyber-blue/30">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
