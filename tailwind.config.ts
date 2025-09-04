@@ -167,22 +167,6 @@ export default {
 		}
 	},
 	plugins: [
-		require("tailwindcss-animate"),
-		function({ addUtilities }) {
-			addUtilities({
-				// Hover Scale Animation
-				'.hover-scale': {
-					'@apply': 'transition-transform duration-200 hover:scale-105'
-				},
-				// Card Hover Effect
-				'.card-hover': {
-					'@apply': 'transition-all duration-300 hover:shadow-lg hover:-translate-y-1'
-				},
-				// Glow Effect
-				'.glow-on-hover': {
-					'@apply': 'transition-all duration-300'
-				}
-			})
-		}
+		require("tailwindcss-animate")
 	],
 } satisfies Config;
