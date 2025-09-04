@@ -167,6 +167,26 @@ export default {
 		}
 	},
 	plugins: [
-		require("tailwindcss-animate")
+		require("tailwindcss-animate"),
+		function({ addUtilities }) {
+			addUtilities({
+				// Interactive Elements
+				'.story-link': {
+					'@apply': 'relative inline-block after:content-[\'\'] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
+				},
+				// Hover Scale Animation
+				'.hover-scale': {
+					'@apply': 'transition-transform duration-200 hover:scale-105'
+				},
+				// Card Hover Effect
+				'.card-hover': {
+					'@apply': 'transition-all duration-300 hover:shadow-lg hover:-translate-y-1'
+				},
+				// Glow Effect
+				'.glow-on-hover': {
+					'@apply': 'transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]'
+				}
+			})
+		}
 	],
 } satisfies Config;
