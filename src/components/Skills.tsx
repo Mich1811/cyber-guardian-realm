@@ -117,9 +117,9 @@ const Skills = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Security Focus Areas */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-foreground flex items-center space-x-3">
-              <AlertTriangle className="w-8 h-8 text-cyber-blue" />
+          <div className="space-y-6 animate-slide-in-left">
+            <h3 className="text-2xl font-bold text-foreground flex items-center space-x-3 animate-fade-in">
+              <AlertTriangle className="w-8 h-8 text-cyber-blue hover-scale" />
               <span>Security Focus Areas</span>
             </h3>
             <div className="space-y-4">
@@ -131,14 +131,14 @@ const Skills = () => {
                 { name: 'Incident Response', level: 85 },
                 { name: 'Security Compliance', level: 90 }
               ].map((area, index) => (
-                <div key={index} className="space-y-2">
+                <div key={index} className={`space-y-2 animate-stagger-${Math.min(index + 1, 4)} hover-scale`}>
                   <div className="flex justify-between items-center">
                     <span className="text-foreground font-medium">{area.name}</span>
-                    <span className="text-cyber-glow text-sm">{area.level}%</span>
+                    <span className="text-cyber-glow text-sm font-semibold">{area.level}%</span>
                   </div>
-                  <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                  <div className="h-2 bg-secondary rounded-full overflow-hidden cyber-border">
                     <div 
-                      className="h-full bg-gradient-to-r from-cyber-blue to-cyber-glow rounded-full transition-all duration-1000 ease-out"
+                      className="h-full bg-gradient-to-r from-cyber-blue to-cyber-glow rounded-full transition-all duration-1000 ease-out animate-slide-in-right"
                       style={{ width: `${area.level}%` }}
                     />
                   </div>
@@ -148,19 +148,19 @@ const Skills = () => {
           </div>
 
           {/* Certifications */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-foreground flex items-center space-x-3">
-              <Cpu className="w-8 h-8 text-cyber-glow" />
+          <div className="space-y-6 animate-slide-in-right">
+            <h3 className="text-2xl font-bold text-foreground flex items-center space-x-3 animate-fade-in">
+              <Cpu className="w-8 h-8 text-cyber-glow hover-scale" />
               <span>Certifications & Learning</span>
             </h3>
-            <div className="cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50">
+            <div className="cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50 card-hover glow-on-hover animate-scale-in">
               <div className="space-y-4">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyber-blue rounded-full"></div>
+                  <div key={index} className={`flex items-center space-x-3 animate-stagger-${Math.min(index + 1, 4)} hover-scale`}>
+                    <div className="w-2 h-2 bg-cyber-blue rounded-full animate-pulse"></div>
                     <span className="text-foreground">{cert}</span>
-                    {cert.includes('(In Progress)') && (
-                      <Badge variant="secondary" className="text-xs">In Progress</Badge>
+                    {cert.includes('(Ongoing)') && (
+                      <Badge variant="secondary" className="text-xs animate-pulse">Ongoing</Badge>
                     )}
                     {cert.includes('(Planned)') && (
                       <Badge variant="outline" className="text-xs">Planned</Badge>
@@ -170,9 +170,9 @@ const Skills = () => {
               </div>
             </div>
             
-            <div className="bg-cyber-blue/10 border border-cyber-blue/30 rounded-lg p-4">
+            <div className="bg-cyber-blue/10 border border-cyber-blue/30 rounded-lg p-4 card-hover animate-slide-in-up">
               <div className="flex items-center space-x-3">
-                <Eye className="w-5 h-5 text-cyber-blue" />
+                <Eye className="w-5 h-5 text-cyber-blue animate-pulse" />
                 <div>
                   <h4 className="font-semibold text-foreground">Continuous Learning</h4>
                   <p className="text-sm text-muted-foreground">

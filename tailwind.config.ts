@@ -141,6 +141,31 @@ export default {
 				'stagger-in': {
 					'0%': { opacity: '0', transform: 'translateY(20px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				// Pulse Glow Animation
+				'pulse-glow': {
+					'0%, 100%': { boxShadow: '0 0 5px hsl(var(--cyber-blue) / 0.5)' },
+					'50%': { boxShadow: '0 0 20px hsl(var(--cyber-blue) / 0.8), 0 0 30px hsl(var(--cyber-glow) / 0.6)' }
+				},
+				// Bounce Scale
+				'bounce-scale': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.05)' }
+				},
+				// Glow Expand
+				'glow-expand': {
+					'0%': { 
+						transform: 'scale(1)',
+						boxShadow: '0 0 0 0 hsl(var(--cyber-blue) / 0.7)' 
+					},
+					'70%': { 
+						transform: 'scale(1.02)',
+						boxShadow: '0 0 0 10px hsl(var(--cyber-blue) / 0)' 
+					},
+					'100%': { 
+						transform: 'scale(1)',
+						boxShadow: '0 0 0 0 hsl(var(--cyber-blue) / 0)' 
+					}
 				}
 			},
 			animation: {
@@ -162,7 +187,11 @@ export default {
 				'stagger-1': 'stagger-in 0.4s ease-out 0.1s both',
 				'stagger-2': 'stagger-in 0.4s ease-out 0.2s both',
 				'stagger-3': 'stagger-in 0.4s ease-out 0.3s both',
-				'stagger-4': 'stagger-in 0.4s ease-out 0.4s both'
+				'stagger-4': 'stagger-in 0.4s ease-out 0.4s both',
+				// Special Effects
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'bounce-scale': 'bounce-scale 0.6s ease-in-out',
+				'glow-expand': 'glow-expand 2s infinite'
 			}
 		}
 	},
@@ -172,19 +201,55 @@ export default {
 			addUtilities({
 				// Interactive Elements
 				'.story-link': {
-					'@apply': 'relative inline-block after:content-[\'\'] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
+					position: 'relative',
+					display: 'inline-block',
+					'&::after': {
+						content: '""',
+						position: 'absolute',
+						width: '100%',
+						height: '2px',
+						bottom: '0',
+						left: '0',
+						backgroundColor: 'hsl(var(--primary))',
+						transform: 'scaleX(0)',
+						transformOrigin: 'bottom right',
+						transition: 'transform 0.3s ease-out',
+					},
+					'&:hover::after': {
+						transform: 'scaleX(1)',
+						transformOrigin: 'bottom left',
+					}
 				},
 				// Hover Scale Animation
 				'.hover-scale': {
-					'@apply': 'transition-transform duration-200 hover:scale-105'
+					transition: 'transform 0.2s ease-out',
+					'&:hover': {
+						transform: 'scale(1.05)',
+					}
 				},
 				// Card Hover Effect
 				'.card-hover': {
-					'@apply': 'transition-all duration-300 hover:shadow-lg hover:-translate-y-1'
+					transition: 'all 0.3s ease-out',
+					'&:hover': {
+						transform: 'translateY(-4px)',
+						boxShadow: '0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+					}
 				},
-				// Glow Effect
+				// Glow Effect with Pulse
 				'.glow-on-hover': {
-					'@apply': 'transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]'
+					transition: 'all 0.3s ease-out',
+					'&:hover': {
+						boxShadow: '0 0 20px hsl(var(--cyber-blue) / 0.5)',
+						transform: 'translateY(-2px)'
+					}
+				},
+				// Cyber Pulse Effect
+				'.cyber-pulse': {
+					animation: 'pulse-glow 2s infinite'
+				},
+				// Floating Animation
+				'.floating': {
+					animation: 'bounce-scale 2s infinite alternate'
 				}
 			})
 		}

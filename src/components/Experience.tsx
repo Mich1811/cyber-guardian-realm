@@ -51,14 +51,14 @@ const Experience = () => {
   return (
     <section id="experience" className="py-24 bg-gradient-to-b from-cyber-dark/20 to-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center mb-6">
-            <h2 className="text-4xl md:text-5xl font-bold gradient-text mr-4">Professional Experience</h2>
+            <h2 className="text-4xl md:text-5xl font-bold gradient-text mr-4 animate-slide-in-left">Professional Experience</h2>
             <Button
               variant="outline"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="border-cyber-blue/50 hover:bg-cyber-blue/10"
+              className="border-cyber-blue/50 hover:bg-cyber-blue/10 hover-scale glow-on-hover animate-slide-in-right"
             >
               {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
             </Button>
@@ -71,51 +71,51 @@ const Experience = () => {
         </div>
 
         {isOpen && (
-          <div className="space-y-8 animate-in slide-in-from-top-2 duration-300">
+          <div className="space-y-8 animate-slide-in-up">
             {experiences.map((exp, index) => (
-              <Card key={index} className="cyber-glow bg-gradient-to-r from-card to-card/50 border-cyber-blue/30">
+              <Card key={index} className={`cyber-glow bg-gradient-to-r from-card to-card/50 border-cyber-blue/30 card-hover glow-on-hover animate-stagger-${Math.min(index + 1, 4)}`}>
                 <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
-                    <div>
-                      <CardTitle className="text-xl font-bold text-foreground">{exp.title}</CardTitle>
+                    <div className="animate-slide-in-left">
+                      <CardTitle className="text-xl font-bold text-foreground hover-scale">{exp.title}</CardTitle>
                       <p className="text-cyber-glow font-semibold text-lg">{exp.company}</p>
                     </div>
-                    <div className="flex flex-col space-y-2">
-                      <div className="flex items-center space-x-2 text-muted-foreground">
-                        <Calendar className="w-4 h-4" />
+                    <div className="flex flex-col space-y-2 animate-slide-in-right">
+                      <div className="flex items-center space-x-2 text-muted-foreground hover-scale">
+                        <Calendar className="w-4 h-4 text-cyber-blue" />
                         <span className="text-sm">{exp.period}</span>
                       </div>
-                      <div className="flex items-center space-x-2 text-muted-foreground">
-                        <MapPin className="w-4 h-4" />
+                      <div className="flex items-center space-x-2 text-muted-foreground hover-scale">
+                        <MapPin className="w-4 h-4 text-cyber-glow" />
                         <span className="text-sm">{exp.location}</span>
                       </div>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div>
-                    <h4 className="text-lg font-semibold text-foreground mb-3 flex items-center space-x-2">
-                      <TrendingUp className="w-5 h-5 text-cyber-blue" />
+                  <div className="animate-fade-in">
+                    <h4 className="text-lg font-semibold text-foreground mb-3 flex items-center space-x-2 hover-scale">
+                      <TrendingUp className="w-5 h-5 text-cyber-blue animate-pulse" />
                       <span>Key Achievements</span>
                     </h4>
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-cyber-glow rounded-full mt-2 flex-shrink-0"></div>
+                        <li key={idx} className={`flex items-start space-x-3 animate-stagger-${Math.min(idx + 1, 4)} hover-scale`}>
+                          <div className="w-2 h-2 bg-cyber-glow rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
                           <span className="text-muted-foreground">{achievement}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   
-                  <div>
+                  <div className="animate-slide-in-up">
                     <h4 className="text-sm font-semibold text-foreground mb-2">Core Skills Applied</h4>
                     <div className="flex flex-wrap gap-2">
                       {exp.skills.map((skill, idx) => (
                         <Badge 
                           key={idx} 
                           variant="outline" 
-                          className="text-xs border-cyber-accent/50 text-cyber-accent hover:bg-cyber-accent/10"
+                          className={`text-xs border-cyber-accent/50 text-cyber-accent hover:bg-cyber-accent/10 transition-colors hover-scale animate-stagger-${Math.min(idx + 1, 4)}`}
                         >
                           {skill}
                         </Badge>
@@ -129,10 +129,10 @@ const Experience = () => {
         )}
 
         {isOpen && (
-          <div className="mt-16 text-center animate-in slide-in-from-top-2 duration-300">
-            <div className="bg-gradient-to-r from-cyber-blue/10 to-cyber-glow/10 border border-cyber-blue/30 rounded-lg p-6 max-w-4xl mx-auto">
-              <h3 className="text-xl font-bold text-foreground mb-3">Career Transition Focus</h3>
-              <p className="text-muted-foreground">
+          <div className="mt-16 text-center animate-slide-in-up">
+            <div className="bg-gradient-to-r from-cyber-blue/10 to-cyber-glow/10 border border-cyber-blue/30 rounded-lg p-6 max-w-4xl mx-auto card-hover glow-on-hover animate-scale-in">
+              <h3 className="text-xl font-bold text-foreground mb-3 animate-fade-in">Career Transition Focus</h3>
+              <p className="text-muted-foreground animate-stagger-1">
                 Currently leveraging my extensive background in risk management, compliance, and strategic operations 
                 to build expertise in cybersecurity. My unique perspective combines business operations knowledge 
                 with technical security skills, positioning me to bridge the gap between business requirements 
