@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Shield, Target, Search, Code, Network, Terminal, Eye, FileSearch, TrendingUp, AlertTriangle, Lock } from 'lucide-react';
+import { Shield, Target, Search, Code, Network, Terminal, Eye, FileSearch, TrendingUp, TriangleAlert, Lock } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import React from 'react';
 
@@ -118,7 +118,7 @@ const Skills = () => {
           {/* Security Focus Areas */}
           <div className="space-y-6 animate-slide-in-left">
             <h3 className="text-2xl font-bold text-foreground flex items-center space-x-3 animate-fade-in">
-              <AlertTriangle className="w-8 h-8 text-cyber-blue hover-scale" />
+              <TriangleAlert className="w-8 h-8 text-cyber-blue hover-scale" />
               <span>Security Focus Areas</span>
             </h3>
             <div className="space-y-4">
