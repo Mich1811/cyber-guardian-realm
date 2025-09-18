@@ -1,8 +1,39 @@
 import { Button } from '@/components/ui/button';
-import { Shield, Download, ExternalLink } from 'lucide-react';
+import { Shield, Download, ExternalLink, MousePointer2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import heroImage from '@/assets/cyber-hero.jpg';
 
 const Hero = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isTyping, setIsTyping] = useState(false);
+  const [displayText, setDisplayText] = useState('');
+  const fullText = 'Cybersecurity Analyst';
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    setIsTyping(true);
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        setIsTyping(false);
+        clearInterval(timer);
+      }
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
@@ -16,12 +47,38 @@ const Hero = () => {
         }}
       />
       
-      {/* Animated background elements */}
-      <div className="absolute inset-0 z-10">
-        <div className="absolute top-20 left-20 w-2 h-2 bg-cyber-blue rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-32 w-1 h-1 bg-cyber-glow rounded-full animate-ping"></div>
-        <div className="absolute bottom-32 left-16 w-3 h-3 bg-cyber-accent rounded-full animate-pulse delay-300"></div>
-        <div className="absolute bottom-20 right-20 w-2 h-2 bg-cyber-blue rounded-full animate-ping delay-700"></div>
+      {/* Interactive floating elements */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        {/* Mouse-following particles */}
+        <div 
+          className="absolute w-2 h-2 bg-cyber-blue rounded-full animate-pulse transition-all duration-300 ease-out"
+          style={{
+            left: mousePosition.x * 0.02 + 100,
+            top: mousePosition.y * 0.02 + 100,
+          }}
+        />
+        <div 
+          className="absolute w-1 h-1 bg-cyber-glow rounded-full animate-ping transition-all duration-500 ease-out"
+          style={{
+            right: (window.innerWidth - mousePosition.x) * 0.015 + 150,
+            top: mousePosition.y * 0.01 + 200,
+          }}
+        />
+        
+        {/* Floating interactive particles */}
+        <div className="absolute top-20 left-20 w-3 h-3 bg-cyber-blue/70 rounded-full animate-pulse hover:scale-150 hover:bg-cyber-glow transition-all duration-300 cursor-pointer" onClick={() => {}}></div>
+        <div className="absolute top-40 right-32 w-2 h-2 bg-cyber-glow/70 rounded-full animate-ping hover:scale-125 hover:bg-cyber-blue transition-all duration-300 cursor-pointer"></div>
+        <div className="absolute bottom-32 left-16 w-4 h-4 bg-cyber-accent/70 rounded-full animate-pulse delay-300 hover:scale-150 hover:bg-cyber-blue transition-all duration-300 cursor-pointer"></div>
+        <div className="absolute bottom-20 right-20 w-3 h-3 bg-cyber-blue/70 rounded-full animate-ping delay-700 hover:scale-125 hover:bg-cyber-glow transition-all duration-300 cursor-pointer"></div>
+        
+        {/* Interactive grid lines */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="grid grid-cols-12 grid-rows-8 h-full w-full">
+            {Array.from({ length: 96 }).map((_, i) => (
+              <div key={i} className="border border-cyber-blue/10 hover:border-cyber-blue/40 transition-all duration-300"></div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-20">
@@ -43,8 +100,11 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-stagger-1">
               <span className="gradient-text">Nicholas Oyaro</span>
             </h1>
-            <div className="text-2xl md:text-3xl text-cyber-glow font-semibold animate-stagger-2">
-              Cybersecurity Analyst
+            <div className="text-2xl md:text-3xl text-cyber-glow font-semibold animate-stagger-2 min-h-[3rem] flex items-center justify-center">
+              <span className="relative">
+                {displayText}
+                {isTyping && <span className="animate-pulse">|</span>}
+              </span>
             </div>
           </div>
 
@@ -55,11 +115,28 @@ const Hero = () => {
             <span className="text-cyber-accent font-semibold"> Threat Intelligence</span> through hands-on projects
           </p>
 
-          {/* Expertise badges */}
+          {/* Interactive expertise badges */}
           <div className="flex flex-wrap justify-center gap-4 mt-8 animate-stagger-4">
             {['Penetration Testing', 'SIEM Analysis', 'Threat Intelligence', 'Security Analysis'].map((skill, index) => (
-              <div key={skill} className={`cyber-border rounded-full px-6 py-3 bg-card/50 hover-scale animate-stagger-${Math.min(index + 1, 4)}`}>
-                <span className="text-cyber-glow font-medium">{skill}</span>
+              <div 
+                key={skill} 
+                className={`group cyber-border rounded-full px-6 py-3 bg-card/50 hover-scale animate-stagger-${Math.min(index + 1, 4)} cursor-pointer relative overflow-hidden`}
+                onMouseEnter={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                  e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-cyber-blue/20 to-cyber-glow/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
+                <span className="text-cyber-glow font-medium relative z-10 group-hover:text-white transition-colors duration-300">{skill}</span>
+                <div 
+                  className="absolute w-16 h-16 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-100"
+                  style={{
+                    left: 'var(--mouse-x, 50%)',
+                    top: 'var(--mouse-y, 50%)',
+                    transform: 'translate(-50%, -50%) scale(var(--scale, 0))',
+                  }}
+                />
               </div>
             ))}
           </div>

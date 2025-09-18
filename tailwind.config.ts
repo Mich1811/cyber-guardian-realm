@@ -247,10 +247,10 @@ export default {
 				'.cyber-pulse': {
 					animation: 'pulse-glow 2s infinite'
 				},
-				// Floating Animation
-				'.floating': {
-					animation: 'bounce-scale 2s infinite alternate'
-				}
+        /* Floating animation */
+        '.animate-float': {
+          animation: 'bounce-scale 3s ease-in-out infinite'
+        }
 			})
 		}
 	],

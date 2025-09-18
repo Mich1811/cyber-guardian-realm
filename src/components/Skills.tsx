@@ -1,19 +1,18 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Shield, 
-  Terminal, 
-  Network, 
-  Search, 
-  Code, 
-  Server, 
-  Eye, 
-  Lock,
-  AlertTriangle,
-  Cpu
-} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Shield, Target, Search, Code, Network, Terminal, Eye, FileSearch, TrendingUp, AlertTriangle, Lock } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import React from 'react';
 
 const Skills = () => {
+  const [activeCategory, setActiveCategory] = useState('security');
+  const [animatedBars, setAnimatedBars] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimatedBars(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
   const skillCategories = [
     {
       title: 'Cybersecurity Core',
@@ -93,7 +92,7 @@ const Skills = () => {
               <CardHeader>
                 <div className="flex items-center space-x-3">
                   <div className={`w-12 h-12 bg-${category.color}/20 rounded-lg flex items-center justify-center hover-scale`}>
-                    <category.icon className={`w-6 h-6 text-${category.color}`} />
+                    {React.createElement(category.icon, { className: `w-6 h-6 text-${category.color}` })}
                   </div>
                   <CardTitle className="text-lg font-bold text-foreground">{category.title}</CardTitle>
                 </div>
@@ -150,7 +149,7 @@ const Skills = () => {
           {/* Certifications */}
           <div className="space-y-6 animate-slide-in-right">
             <h3 className="text-2xl font-bold text-foreground flex items-center space-x-3 animate-fade-in">
-              <Cpu className="w-8 h-8 text-cyber-glow hover-scale" />
+              <Eye className="w-8 h-8 text-cyber-glow hover-scale" />
               <span>Certifications & Learning</span>
             </h3>
             <div className="cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50 card-hover glow-on-hover animate-scale-in">
