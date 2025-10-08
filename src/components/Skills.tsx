@@ -8,7 +8,7 @@ import React from 'react';
 import googleCyber from '@/assets/certs/cybersecurity-google.jpg';
 import googleData from '@/assets/certs/data-analytics.jpg';
 import arcx from '@/assets/certs/arcx.jpg';
-import tryhackme from '@/assets/certs/tryhackme-badges.png';
+import tryhackme from '@/assets/certs/tryhackme.jpg';
 import tata from '@/assets/certs/tata.jpg';
 
 const Skills = () => {
