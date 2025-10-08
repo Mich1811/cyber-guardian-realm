@@ -32,7 +32,11 @@ const Skills = () => {
         'Incident Response',
         'Vulnerability Management'
       ],
-      color: 'cyber-blue'
+      bgColor: 'bg-red-500/20',
+      iconColor: 'text-red-500',
+      hoverBg: 'hover:bg-red-500/30',
+      borderColor: 'border-red-500/50',
+      badgeHover: 'hover:bg-red-500/10'
     },
     {
       title: 'SOC Operations',
@@ -45,7 +49,11 @@ const Skills = () => {
         'Security Alerting',
         'Threat Detection'
       ],
-      color: 'cyber-glow'
+      bgColor: 'bg-purple-500/20',
+      iconColor: 'text-purple-500',
+      hoverBg: 'hover:bg-purple-500/30',
+      borderColor: 'border-purple-500/50',
+      badgeHover: 'hover:bg-purple-500/10'
     },
     {
       title: 'Risk & Compliance',
@@ -58,7 +66,11 @@ const Skills = () => {
         'Security Policies',
         'Regulatory Compliance'
       ],
-      color: 'cyber-accent'
+      bgColor: 'bg-green-500/20',
+      iconColor: 'text-green-500',
+      hoverBg: 'hover:bg-green-500/30',
+      borderColor: 'border-green-500/50',
+      badgeHover: 'hover:bg-green-500/10'
     },
     {
       title: 'Threat Analysis',
@@ -71,7 +83,11 @@ const Skills = () => {
         'Threat Intelligence',
         'Forensic Analysis'
       ],
-      color: 'cyber-blue'
+      bgColor: 'bg-amber-500/20',
+      iconColor: 'text-amber-500',
+      hoverBg: 'hover:bg-amber-500/30',
+      borderColor: 'border-amber-500/50',
+      badgeHover: 'hover:bg-amber-500/10'
     }
   ];
 
@@ -95,24 +111,33 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {skillCategories.map((category, index) => (
-            <Card key={index} className={`cyber-glow bg-gradient-to-b from-card to-card/50 border-cyber-blue/30 card-hover animate-stagger-${Math.min(index + 1, 4)}`}>
+            <Card 
+              key={index} 
+              className={`group cyber-glow bg-gradient-to-b from-card to-card/50 border-cyber-blue/30 card-hover animate-stagger-${Math.min(index + 1, 4)} transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer`}
+              onClick={() => setActiveCategory(activeCategory === category.title ? '' : category.title)}
+            >
               <CardHeader>
                 <div className="flex items-center space-x-3">
-                  <div className={`w-12 h-12 bg-${category.color}/20 rounded-lg flex items-center justify-center hover-scale`}>
-                    {React.createElement(category.icon, { className: `w-6 h-6 text-${category.color}` })}
+                  <div className={`w-14 h-14 ${category.bgColor} rounded-lg flex items-center justify-center hover-scale transition-all duration-300 group-hover:scale-110 ${category.hoverBg}`}>
+                    {React.createElement(category.icon, { className: `w-7 h-7 ${category.iconColor} transition-all duration-300 group-hover:rotate-12` })}
                   </div>
-                  <CardTitle className="text-lg font-bold text-foreground">{category.title}</CardTitle>
+                  <CardTitle className="text-lg font-bold text-foreground group-hover:text-cyber-glow transition-colors">{category.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
+                  {category.skills.map((skill, skillIndex) => (
                     <Badge 
                       key={skill} 
                       variant="outline" 
-                      className={`text-xs border-${category.color}/50 text-${category.color} hover:bg-${category.color}/10 transition-colors hover-scale`}
+                      className={`text-xs ${category.borderColor} ${category.iconColor} ${category.badgeHover} transition-all duration-300 hover-scale cursor-pointer hover:shadow-md animate-fade-in`}
+                      style={{ animationDelay: `${skillIndex * 50}ms` }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        // Could add skill detail modal here
+                      }}
                     >
                       {skill}
                     </Badge>
@@ -132,21 +157,24 @@ const Skills = () => {
             </h3>
             <div className="space-y-4">
               {[
-                { name: 'Threat Intelligence', level: 85 },
-                { name: 'Digital Forensics', level: 80 },
-                { name: 'SOC Operations', level: 90 },
-                { name: 'Risk Assessment', level: 95 },
-                { name: 'Incident Response', level: 85 },
-                { name: 'Security Compliance', level: 90 }
+                { name: 'Threat Intelligence', level: 85, icon: Search, color: 'text-blue-500' },
+                { name: 'Digital Forensics', level: 80, icon: FileSearch, color: 'text-purple-500' },
+                { name: 'SOC Operations', level: 90, icon: Terminal, color: 'text-green-500' },
+                { name: 'Risk Assessment', level: 95, icon: TriangleAlert, color: 'text-amber-500' },
+                { name: 'Incident Response', level: 85, icon: Shield, color: 'text-red-500' },
+                { name: 'Security Compliance', level: 90, icon: Lock, color: 'text-cyan-500' }
               ].map((area, index) => (
-                <div key={index} className={`space-y-2 animate-stagger-${Math.min(index + 1, 4)} hover-scale`}>
+                <div key={index} className={`space-y-2 animate-stagger-${Math.min(index + 1, 4)} group cursor-pointer`}>
                   <div className="flex justify-between items-center">
-                    <span className="text-foreground font-medium">{area.name}</span>
-                    <span className="text-cyber-glow text-sm font-semibold">{area.level}%</span>
+                    <div className="flex items-center space-x-2">
+                      {React.createElement(area.icon, { className: `w-5 h-5 ${area.color} transition-all duration-300 group-hover:scale-125 group-hover:rotate-12` })}
+                      <span className="text-foreground font-medium group-hover:text-cyber-glow transition-colors">{area.name}</span>
+                    </div>
+                    <span className="text-cyber-glow text-sm font-semibold group-hover:scale-110 transition-transform">{area.level}%</span>
                   </div>
-                  <div className="h-2 bg-secondary rounded-full overflow-hidden cyber-border">
+                  <div className="h-3 bg-secondary rounded-full overflow-hidden cyber-border group-hover:h-4 transition-all duration-300">
                     <div 
-                      className="h-full bg-gradient-to-r from-cyber-blue to-cyber-glow rounded-full transition-all duration-1000 ease-out animate-slide-in-right"
+                      className="h-full bg-gradient-to-r from-cyber-blue via-cyber-glow to-cyber-accent rounded-full transition-all duration-1000 ease-out animate-slide-in-right group-hover:shadow-lg"
                       style={{ width: `${area.level}%` }}
                     />
                   </div>
