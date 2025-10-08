@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Shield, Download, ExternalLink, MousePointer2 } from 'lucide-react';
+import { Shield, ExternalLink, MousePointer2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import heroImage from '@/assets/cyber-hero.jpg';
 
@@ -142,17 +142,11 @@ const Hero = () => {
           </div>
 
           {/* Action buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-6 mt-12 animate-slide-in-up">
+          <div className="flex justify-center mt-12 animate-slide-in-up">
             <Button variant="glow" size="lg" asChild className="hover-scale glow-on-hover">
               <a href="#projects" className="flex items-center space-x-2">
                 <ExternalLink className="w-5 h-5" />
                 <span>View Projects</span>
-              </a>
-            </Button>
-            <Button variant="cyber" size="lg" asChild className="hover-scale">
-              <a href="#contact" className="flex items-center space-x-2">
-                <Download className="w-5 h-5" />
-                <span>Download Resume</span>
               </a>
             </Button>
           </div>
