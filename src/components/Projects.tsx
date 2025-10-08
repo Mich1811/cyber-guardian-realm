@@ -33,7 +33,7 @@ const Projects = () => {
       iconBgColor: 'bg-cyan-500/20',
       iconBgHover: 'group-hover:bg-cyan-500/40',
       technologies: ['PHP', 'MySQL', 'Apache', 'Linux', 'HTML/CSS', 'JavaScript'],
-      github: 'https://github.com/Mich1811/barber-shop',
+      github: 'https://github.com/Mich1811/LAMP-STACK',
       category: 'Web Development',
       highlights: [
         'Secure user authentication',
