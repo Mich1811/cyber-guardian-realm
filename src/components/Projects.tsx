@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Github, ExternalLink, Shield, Server, Flag, Bug, ChevronRight, Eye } from 'lucide-react';
 import { useState } from 'react';
+import projectsBg from '@/assets/projects-cyber-bg.jpg';
 
 const Projects = () => {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
@@ -66,8 +67,18 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-b from-cyber-dark/20 to-background">
-      <div className="container mx-auto px-6">
+    <section 
+      id="projects" 
+      className="py-24 relative bg-gradient-to-b from-cyber-dark/20 to-background"
+      style={{
+        backgroundImage: `url(${projectsBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">Featured Projects</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
