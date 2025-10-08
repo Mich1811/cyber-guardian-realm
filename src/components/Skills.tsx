@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Shield, Target, Search, Code, Network, Terminal, Eye, FileSearch, TrendingUp, TriangleAlert, Lock } from 'lucide-react';
+import { Shield, Target, Search, Code, Network, Terminal, Eye, FileSearch, TrendingUp, TriangleAlert, Lock, FileText, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import React from 'react';
 
@@ -154,32 +154,51 @@ const Skills = () => {
               <Eye className="w-8 h-8 text-cyber-glow hover-scale" />
               <span>Certifications & Learning</span>
             </h3>
-            <div className="cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50 card-hover glow-on-hover animate-scale-in">
-              <div className="space-y-4">
-                {certifications.map((cert, index) => (
-                  <div key={index} className={`flex items-center space-x-3 animate-stagger-${Math.min(index + 1, 4)}`}>
-                    <div className="w-2 h-2 bg-cyber-blue rounded-full animate-pulse"></div>
-                    {cert.file ? (
-                      <a 
-                        href={cert.file} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:text-cyber-blue transition-colors duration-200 hover-scale cursor-pointer underline-offset-4 hover:underline"
-                      >
-                        {cert.name}
-                      </a>
-                    ) : (
-                      <span className="text-foreground">{cert.name}</span>
-                    )}
-                    {cert.name.includes('(Ongoing)') && (
-                      <Badge variant="secondary" className="text-xs animate-pulse">Ongoing</Badge>
-                    )}
-                    {cert.name.includes('(Planned)') && (
-                      <Badge variant="outline" className="text-xs">Planned</Badge>
-                    )}
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {certifications.map((cert, index) => (
+                cert.file ? (
+                  <a
+                    key={index}
+                    href={cert.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50 card-hover glow-on-hover animate-stagger-${Math.min(index + 1, 4)} cursor-pointer transition-all duration-300 hover:scale-105`}
+                  >
+                    <div className="flex flex-col items-center text-center space-y-3">
+                      <div className="w-16 h-16 bg-cyber-blue/20 rounded-lg flex items-center justify-center group-hover:bg-cyber-blue/30 transition-colors">
+                        <FileText className="w-8 h-8 text-cyber-blue" />
+                      </div>
+                      <div className="space-y-2 flex-1">
+                        <h4 className="font-semibold text-foreground group-hover:text-cyber-blue transition-colors">
+                          {cert.name.replace(' (Ongoing)', '')}
+                        </h4>
+                      </div>
+                      <div className="flex items-center space-x-2 text-cyber-glow text-sm">
+                        <span>View Certificate</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </a>
+                ) : (
+                  <div
+                    key={index}
+                    className={`cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50 animate-stagger-${Math.min(index + 1, 4)}`}
+                  >
+                    <div className="flex flex-col items-center text-center space-y-3">
+                      <div className="w-16 h-16 bg-cyber-accent/20 rounded-lg flex items-center justify-center">
+                        <FileText className="w-8 h-8 text-cyber-accent" />
+                      </div>
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-foreground">
+                          {cert.name.replace(' (Ongoing)', '')}
+                        </h4>
+                        <Badge variant="secondary" className="text-xs animate-pulse">Ongoing</Badge>
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </div>
+                )
+              ))}
             </div>
             
             <div className="bg-cyber-blue/10 border border-cyber-blue/30 rounded-lg p-4 card-hover animate-slide-in-up">
