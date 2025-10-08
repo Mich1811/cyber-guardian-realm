@@ -93,8 +93,8 @@ const About = () => {
                     <Target className="w-6 h-6 text-cyber-glow" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">5+ Years Experience</h4>
-                    <p className="text-sm text-muted-foreground">Operations and project management</p>
+                    <h4 className="font-semibold text-foreground">2+ Years in Cybersecurity</h4>
+                    <p className="text-sm text-muted-foreground">Threat intelligence & SOC operations</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4 animate-stagger-3">
