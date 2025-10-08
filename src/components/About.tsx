@@ -12,22 +12,34 @@ const About = () => {
     {
       icon: Shield,
       title: 'Risk Management',
-      description: 'Identifying, assessing, and mitigating operational and cybersecurity risks across organizations.'
+      description: 'Identifying, assessing, and mitigating operational and cybersecurity risks across organizations.',
+      bgColor: 'bg-red-500/20',
+      iconColor: 'text-red-500',
+      hoverBg: 'group-hover:bg-red-500/30'
     },
     {
       icon: Target,
       title: 'Compliance & Governance',
-      description: 'Ensuring adherence to regulatory frameworks and implementing robust security governance policies.'
+      description: 'Ensuring adherence to regulatory frameworks and implementing robust security governance policies.',
+      bgColor: 'bg-purple-500/20',
+      iconColor: 'text-purple-500',
+      hoverBg: 'group-hover:bg-purple-500/30'
     },
     {
       icon: Search,
       title: 'Threat Intelligence',
-      description: 'Analyzing security threats and developing intelligence to prevent and respond to cyber incidents.'
+      description: 'Analyzing security threats and developing intelligence to prevent and respond to cyber incidents.',
+      bgColor: 'bg-green-500/20',
+      iconColor: 'text-green-500',
+      hoverBg: 'group-hover:bg-green-500/30'
     },
     {
       icon: Code,
       title: 'Network Security',
-      description: 'Securing network infrastructure and implementing protective measures against cyber threats and vulnerabilities.'
+      description: 'Securing network infrastructure and implementing protective measures against cyber threats and vulnerabilities.',
+      bgColor: 'bg-amber-500/20',
+      iconColor: 'text-amber-500',
+      hoverBg: 'group-hover:bg-amber-500/30'
     }
   ];
 
@@ -80,8 +92,8 @@ const About = () => {
             <div className="relative cyber-border rounded-lg p-8 bg-gradient-to-br from-card to-card/50 card-hover">
               <div className="space-y-4">
                 <div className="flex items-center space-x-4 animate-stagger-1">
-                  <div className="w-12 h-12 bg-cyber-blue/20 rounded-full flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-cyber-blue" />
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-blue-500" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Risk & Compliance Focus</h4>
@@ -89,8 +101,8 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-center space-x-4 animate-stagger-2">
-                  <div className="w-12 h-12 bg-cyber-glow/20 rounded-full flex items-center justify-center">
-                    <Target className="w-6 h-6 text-cyber-glow" />
+                  <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                    <Target className="w-6 h-6 text-emerald-500" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">2+ Years in Cybersecurity</h4>
@@ -98,8 +110,8 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-center space-x-4 animate-stagger-3">
-                  <div className="w-12 h-12 bg-cyber-accent/20 rounded-full flex items-center justify-center">
-                    <Code className="w-6 h-6 text-cyber-accent" />
+                  <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                    <Code className="w-6 h-6 text-orange-500" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Continuous Learning</h4>
@@ -124,8 +136,8 @@ const About = () => {
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-cyber-blue/20 rounded-full flex items-center justify-center mx-auto mb-4 hover-scale group-hover:bg-cyber-blue/30 transition-colors">
-                  <spec.icon className="w-8 h-8 text-cyber-blue group-hover:scale-110 transition-transform" />
+                <div className={`w-16 h-16 ${spec.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 hover-scale ${spec.hoverBg} transition-colors`}>
+                  <spec.icon className={`w-8 h-8 ${spec.iconColor} group-hover:scale-110 transition-transform`} />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-3">{spec.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{spec.description}</p>
