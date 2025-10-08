@@ -161,8 +161,6 @@ const Skills = () => {
                   <a
                     key={index}
                     href={cert.file}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className={`group cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50 card-hover glow-on-hover animate-stagger-${Math.min(index + 1, 4)} cursor-pointer transition-all duration-300 hover:scale-105`}
                   >
                     <div className="flex flex-col items-center text-center space-y-3">
