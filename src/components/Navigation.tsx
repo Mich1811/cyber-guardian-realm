@@ -74,7 +74,7 @@ const Navigation = () => {
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild className="hover-scale hover:rotate-12 transition-all duration-300">
-                <a href="#contact">
+                <a href="https://www.linkedin.com/in/nicholasoyaro" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-5 h-5" />
                 </a>
               </Button>
@@ -121,7 +121,7 @@ const Navigation = () => {
                   </a>
                 </Button>
                 <Button variant="ghost" size="icon" asChild className="hover-scale hover:rotate-12 transition-all duration-300">
-                  <a href="#contact">
+                  <a href="https://www.linkedin.com/in/nicholasoyaro" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </Button>

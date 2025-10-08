@@ -107,7 +107,7 @@ const Contact = () => {
                   onMouseEnter={() => setHoveredIcon('linkedin')}
                   onMouseLeave={() => setHoveredIcon(null)}
                 >
-                  <a href="#" className="flex items-center space-x-2">
+                  <a href="https://www.linkedin.com/in/nicholasoyaro" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                     <Linkedin className={`w-5 h-5 ${hoveredIcon === 'linkedin' ? 'animate-pulse' : ''}`} />
                     <span>LinkedIn</span>
                   </a>
