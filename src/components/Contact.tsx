@@ -56,6 +56,11 @@ const Contact = () => {
         description: "Thank you for your message. I'll get back to you soon!",
       });
       setFormData({ name: '', email: '', message: '' });
+      
+      // Redirect to user's email client
+      setTimeout(() => {
+        window.location.href = `mailto:nickmichira@gmail.com?subject=Contact%20from%20${encodeURIComponent(formData.name)}&body=Hello%20Nicholas,%0D%0A%0D%0A`;
+      }, 1500);
     } catch (error: any) {
       console.error('Error sending message:', error);
       toast({

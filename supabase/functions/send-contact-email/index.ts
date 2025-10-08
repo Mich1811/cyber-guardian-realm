@@ -50,7 +50,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email to yourself
     const emailResponse = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      to: ["nicholas.oyaro@example.com"], // Replace with your actual email
+      to: ["nickmichira@gmail.com"],
       subject: `Portfolio Contact from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
