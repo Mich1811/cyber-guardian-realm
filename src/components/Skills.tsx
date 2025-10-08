@@ -69,10 +69,12 @@ const Skills = () => {
   ];
 
   const certifications = [
-    'Google Cybersecurity Certificate',
-    'Google Data Analytics Professional Certificate',
-    'Cybersecurity Bootcamp - Moringa School (Ongoing)',
-    'Arcx 101 Cyber Threat Intelligence'
+    { name: 'Google Cybersecurity Certificate', file: '/certifications/Coursera_Cybersecurity_Google.pdf' },
+    { name: 'Google Data Analytics Professional Certificate', file: '/certifications/Coursera_Data_analytics.pdf' },
+    { name: 'Cybersecurity Bootcamp - Moringa School (Ongoing)', file: null },
+    { name: 'Arcx 101 Cyber Threat Intelligence', file: '/certifications/Arc_x.pdf' },
+    { name: 'TryHackMe Pre-Security Learning Path', file: '/certifications/Try_Hack_me_Pre_security_Learning_Path.pdf' },
+    { name: 'Tata Cybersecurity Job Simulation', file: '/certifications/Tata_forage.pdf' }
   ];
 
   return (
@@ -155,13 +157,24 @@ const Skills = () => {
             <div className="cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50 card-hover glow-on-hover animate-scale-in">
               <div className="space-y-4">
                 {certifications.map((cert, index) => (
-                  <div key={index} className={`flex items-center space-x-3 animate-stagger-${Math.min(index + 1, 4)} hover-scale`}>
+                  <div key={index} className={`flex items-center space-x-3 animate-stagger-${Math.min(index + 1, 4)}`}>
                     <div className="w-2 h-2 bg-cyber-blue rounded-full animate-pulse"></div>
-                    <span className="text-foreground">{cert}</span>
-                    {cert.includes('(Ongoing)') && (
+                    {cert.file ? (
+                      <a 
+                        href={cert.file} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-foreground hover:text-cyber-blue transition-colors duration-200 hover-scale cursor-pointer underline-offset-4 hover:underline"
+                      >
+                        {cert.name}
+                      </a>
+                    ) : (
+                      <span className="text-foreground">{cert.name}</span>
+                    )}
+                    {cert.name.includes('(Ongoing)') && (
                       <Badge variant="secondary" className="text-xs animate-pulse">Ongoing</Badge>
                     )}
-                    {cert.includes('(Planned)') && (
+                    {cert.name.includes('(Planned)') && (
                       <Badge variant="outline" className="text-xs">Planned</Badge>
                     )}
                   </div>
