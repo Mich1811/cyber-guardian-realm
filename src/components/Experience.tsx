@@ -64,9 +64,9 @@ const Experience = () => {
             </Button>
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Over 5 years of progressive experience in risk management, compliance, 
-            and strategic operations. Proven track record in project management, stakeholder coordination, 
-            and building robust operational frameworks across various industries.
+            Over 2 years of hands-on experience in cybersecurity, actively completing TryHackMe labs 
+            and building practical security skills. Combining 5+ years of risk management and compliance 
+            expertise with emerging cybersecurity knowledge to deliver comprehensive security solutions.
           </p>
         </div>
 
