@@ -15,10 +15,20 @@ const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('security');
   const [animatedBars, setAnimatedBars] = useState(false);
   const [selectedCert, setSelectedCert] = useState<string | null>(null);
+  const [badgeRefresh, setBadgeRefresh] = useState(Date.now());
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimatedBars(true), 500);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Refresh TryHackMe badge every 5 minutes to show updated stats
+  useEffect(() => {
+    const refreshInterval = setInterval(() => {
+      setBadgeRefresh(Date.now());
+    }, 5 * 60 * 1000); // 5 minutes
+
+    return () => clearInterval(refreshInterval);
   }, []);
   const skillCategories = [
     {
@@ -262,9 +272,13 @@ const Skills = () => {
                     className="hover-scale transition-transform duration-300"
                   >
                     <img 
-                      src="https://tryhackme-badges.s3.amazonaws.com/Nickmich0.png" 
+                      src={`https://tryhackme-badges.s3.amazonaws.com/Nickmich0.png?t=${badgeRefresh}`}
                       alt="TryHackMe Badge"
                       className="rounded-lg cyber-border glow-on-hover"
+                      onError={(e) => {
+                        console.log('TryHackMe badge failed to load');
+                        e.currentTarget.style.display = 'none';
+                      }}
                     />
                   </a>
                 </div>
