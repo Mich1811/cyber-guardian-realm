@@ -170,16 +170,21 @@ const Skills = () => {
                     onClick={() => setSelectedCert(cert.image)}
                     className={`group cyber-border rounded-lg overflow-hidden bg-gradient-to-br from-card to-card/50 card-hover glow-on-hover animate-stagger-${Math.min(index + 1, 4)} cursor-pointer transition-all duration-300 hover:scale-105`}
                   >
-                    <div className="aspect-[4/3] w-full overflow-hidden">
+                    <div className="aspect-[4/3] w-full overflow-hidden relative">
                       <img 
                         src={cert.image} 
                         alt={cert.name}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
                     </div>
-                    <div className="p-4 flex items-center justify-center space-x-2 text-cyber-glow text-sm">
-                      <span>View Certificate</span>
-                      <ExternalLink className="w-4 h-4" />
+                    <div className="p-4 space-y-2">
+                      <h4 className="font-semibold text-foreground text-sm line-clamp-2">
+                        {cert.name}
+                      </h4>
+                      <div className="flex items-center justify-center space-x-2 text-cyber-glow text-xs">
+                        <span>View Certificate</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </div>
                     </div>
                   </button>
                 ) : (
