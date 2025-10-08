@@ -8,6 +8,20 @@ const Projects = () => {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const projects = [
     {
+      title: 'Professional Penetration Testing',
+      description: 'Comprehensive penetration test reports documenting security assessments performed on authorized systems. Includes vulnerability analysis, exploitation techniques, and detailed remediation recommendations.',
+      icon: Shield,
+      technologies: ['Penetration Testing', 'Vulnerability Assessment', 'Security Auditing', 'Risk Analysis'],
+      github: 'https://github.com/Mich1811/Penetration-Test',
+      category: 'Security Assessment',
+      highlights: [
+        'Professional pentest reports',
+        'Vulnerability identification',
+        'Security recommendations',
+        'Compliance documentation'
+      ]
+    },
+    {
       title: 'Cybersecurity Home Lab',
       description: 'Comprehensive home lab environment for breach simulations and detection skill building. Features host-only 10.10.10.0/24 network with Wazuh SIEM, DVWA targets, Windows 10 endpoint, and Kali Linux attacker machine.',
       icon: Server,
@@ -19,6 +33,20 @@ const Projects = () => {
         'SIEM telemetry collection',
         'Realistic attack scenarios',
         'Detection engineering practice'
+      ]
+    },
+    {
+      title: 'CVE Exploit Development',
+      description: 'Custom exploit for CVE-2019-9053, adapted for Python 3 with enhanced compatibility for different text encodings. Compatible with CMSMS version 2.2.9 and below.',
+      icon: Bug,
+      technologies: ['Python 3', 'Exploit Development', 'CVE Research', 'CMSMS'],
+      github: 'https://github.com/Mich1811/CVE-2019-9053-Exploit-Python-3',
+      category: 'Vulnerability Research',
+      highlights: [
+        'CVE exploitation',
+        'Python 3 compatibility',
+        'Encoding adaptations',
+        'Security research'
       ]
     },
     {
@@ -120,7 +148,11 @@ const Projects = () => {
                     <h4 className="font-semibold text-cyber-glow">Project Impact:</h4>
                     <p className="text-sm text-muted-foreground">
                       {index === 0 
+                        ? "Professional penetration testing reports demonstrating systematic security assessment methodologies, from reconnaissance to exploitation and remediation, following industry-standard frameworks and best practices."
+                        : index === 1
                         ? "This comprehensive lab environment has enabled practical skill development in breach simulation, detection engineering, and incident response workflows, providing hands-on experience with enterprise security tools."
+                        : index === 2
+                        ? "Demonstrates vulnerability research capabilities and exploit development skills, with focus on adapting existing exploits for modern environments and ensuring compatibility across different system configurations."
                         : "These detailed walkthroughs have contributed to the cybersecurity community by documenting methodical approaches to complex security challenges, helping others learn practical problem-solving techniques."
                       }
                     </p>

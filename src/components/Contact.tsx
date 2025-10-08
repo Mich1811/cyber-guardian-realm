@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Mail, MapPin, Phone, Send, Github, Linkedin, MessageSquare } from 'lucide-react';
+import { Mail, Send, Github, Linkedin, MessageSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -39,30 +39,6 @@ const Contact = () => {
     });
   };
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'nicholas.oyaro@example.com',
-      href: 'mailto:nicholas.oyaro@example.com',
-      color: 'cyber-blue'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+254 700 000 000',
-      href: 'tel:+254700000000',
-      color: 'cyber-glow'
-    },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: 'Nairobi, Kenya',
-      href: null,
-      color: 'cyber-accent'
-    }
-  ];
-
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-cyber-dark/20 to-background">
       <div className="container mx-auto px-6">
@@ -87,37 +63,23 @@ const Contact = () => {
               </p>
             </div>
 
-            {/* Interactive contact methods */}
+            {/* Send Message Button */}
             <div className="space-y-4">
-              {contactInfo.map((info, index) => (
-                <Card 
-                  key={index} 
-                  className={`cyber-glow bg-gradient-to-r from-card to-card/50 border-cyber-blue/30 card-hover transition-all duration-300 cursor-pointer animate-stagger-${Math.min(index + 1, 4)} ${hoveredIcon === info.label ? 'scale-105 shadow-lg' : ''}`}
-                  onMouseEnter={() => setHoveredIcon(info.label)}
-                  onMouseLeave={() => setHoveredIcon(null)}
+              <Button 
+                variant="glow" 
+                size="lg" 
+                className="w-full hover-scale group animate-stagger-1"
+                asChild
+              >
+                <a 
+                  href="mailto:nicholas.oyaro@example.com?subject=Contact%20from%20Portfolio&body=Hello%20Nicholas,%0D%0A%0D%0AI'd%20like%20to%20discuss..."
+                  className="flex items-center justify-center space-x-3"
                 >
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className={`w-12 h-12 bg-${info.color}/20 rounded-lg flex items-center justify-center hover-scale transition-all duration-300`}>
-                        <info.icon className={`w-6 h-6 text-${info.color} ${hoveredIcon === info.label ? 'animate-bounce' : ''}`} />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground">{info.label}</h4>
-                        {info.href ? (
-                          <a 
-                            href={info.href} 
-                            className={`text-${info.color} hover:text-white transition-colors duration-300 story-link`}
-                          >
-                            {info.value}
-                          </a>
-                        ) : (
-                          <span className={`text-${info.color}`}>{info.value}</span>
-                        )}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                  <Mail className="w-5 h-5 group-hover:animate-pulse" />
+                  <span>Send Me a Message</span>
+                  <Send className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
 
             {/* Social Links */}
