@@ -15,20 +15,10 @@ const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('security');
   const [animatedBars, setAnimatedBars] = useState(false);
   const [selectedCert, setSelectedCert] = useState<string | null>(null);
-  const [badgeRefresh, setBadgeRefresh] = useState(Date.now());
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimatedBars(true), 500);
     return () => clearTimeout(timer);
-  }, []);
-
-  // Refresh TryHackMe badge every 5 minutes to show updated stats
-  useEffect(() => {
-    const refreshInterval = setInterval(() => {
-      setBadgeRefresh(Date.now());
-    }, 5 * 60 * 1000); // 5 minutes
-
-    return () => clearInterval(refreshInterval);
   }, []);
   const skillCategories = [
     {
@@ -247,60 +237,6 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* TryHackMe Profile Section */}
-        <div className="mt-16 animate-fade-in">
-          <h3 className="text-3xl font-bold text-foreground text-center mb-8 flex items-center justify-center space-x-3">
-            <Terminal className="w-8 h-8 text-cyber-glow hover-scale" />
-            <span>TryHackMe Profile</span>
-          </h3>
-          
-          <Card className="cyber-glow bg-gradient-to-b from-card to-card/50 border-cyber-blue/30 card-hover max-w-4xl mx-auto">
-            <CardContent className="p-8">
-              <div className="flex flex-col items-center space-y-6">
-                <div className="text-center space-y-2">
-                  <p className="text-muted-foreground">
-                    Active hands-on learning through TryHackMe cybersecurity challenges and labs
-                  </p>
-                </div>
-                
-                {/* TryHackMe Badge */}
-                <div className="w-full flex justify-center">
-                  <a 
-                    href="https://tryhackme.com/p/Nickmich0" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover-scale transition-transform duration-300"
-                  >
-                    <img 
-                      src={`https://tryhackme-badges.s3.amazonaws.com/Nickmich0.png?t=${badgeRefresh}`}
-                      alt="TryHackMe Badge"
-                      className="rounded-lg cyber-border glow-on-hover"
-                      onError={(e) => {
-                        console.log('TryHackMe badge failed to load');
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                  </a>
-                </div>
-                
-                <Button 
-                  asChild
-                  className="bg-gradient-to-r from-cyber-blue to-cyber-glow hover:from-cyber-glow hover:to-cyber-blue transition-all duration-300"
-                >
-                  <a 
-                    href="https://tryhackme.com/p/Nickmich0" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2"
-                  >
-                    <span>View Full Profile</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );
