@@ -5,6 +5,11 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Shield, Target, Search, Code, Network, Terminal, Eye, FileSearch, TrendingUp, TriangleAlert, Lock, FileText, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import React from 'react';
+import googleCyber from '@/assets/certs/cybersecurity-google.jpg';
+import googleData from '@/assets/certs/data-analytics.jpg';
+import arcx from '@/assets/certs/arcx.jpg';
+import tryhackme from '@/assets/certs/tryhackme.jpg';
+import tata from '@/assets/certs/tata.jpg';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('security');
@@ -71,12 +76,12 @@ const Skills = () => {
   ];
 
   const certifications = [
-    { name: 'Google Cybersecurity Certificate', file: '/certifications/Coursera_Cybersecurity_Google.pdf' },
-    { name: 'Google Data Analytics Professional Certificate', file: '/certifications/Coursera_Data_analytics.pdf' },
-    { name: 'Cybersecurity Bootcamp - Moringa School (Ongoing)', file: null },
-    { name: 'Arcx 101 Cyber Threat Intelligence', file: '/certifications/Arc_x.pdf' },
-    { name: 'TryHackMe Pre-Security Learning Path', file: '/certifications/Try_Hack_me_Pre_security_Learning_Path.pdf' },
-    { name: 'Tata Cybersecurity Job Simulation', file: '/certifications/Tata_forage.pdf' }
+    { name: 'Google Cybersecurity Certificate', image: googleCyber },
+    { name: 'Google Data Analytics Professional Certificate', image: googleData },
+    { name: 'Cybersecurity Bootcamp - Moringa School (Ongoing)', image: null },
+    { name: 'Arcx 101 Cyber Threat Intelligence', image: arcx },
+    { name: 'TryHackMe Pre-Security Learning Path', image: tryhackme },
+    { name: 'Tata Cybersecurity Job Simulation', image: tata }
   ];
 
   return (
@@ -159,25 +164,22 @@ const Skills = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {certifications.map((cert, index) => (
-                cert.file ? (
+                cert.image ? (
                   <button
                     key={index}
-                    onClick={() => setSelectedCert(cert.file)}
-                    className={`group cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50 card-hover glow-on-hover animate-stagger-${Math.min(index + 1, 4)} cursor-pointer transition-all duration-300 hover:scale-105`}
+                    onClick={() => setSelectedCert(cert.image)}
+                    className={`group cyber-border rounded-lg overflow-hidden bg-gradient-to-br from-card to-card/50 card-hover glow-on-hover animate-stagger-${Math.min(index + 1, 4)} cursor-pointer transition-all duration-300 hover:scale-105`}
                   >
-                    <div className="flex flex-col items-center text-center space-y-3">
-                      <div className="w-16 h-16 bg-cyber-blue/20 rounded-lg flex items-center justify-center group-hover:bg-cyber-blue/30 transition-colors">
-                        <FileText className="w-8 h-8 text-cyber-blue" />
-                      </div>
-                      <div className="space-y-2 flex-1">
-                        <h4 className="font-semibold text-foreground group-hover:text-cyber-blue transition-colors">
-                          {cert.name.replace(' (Ongoing)', '')}
-                        </h4>
-                      </div>
-                      <div className="flex items-center space-x-2 text-cyber-glow text-sm">
-                        <span>View Certificate</span>
-                        <ExternalLink className="w-4 h-4" />
-                      </div>
+                    <div className="aspect-[4/3] w-full overflow-hidden">
+                      <img 
+                        src={cert.image} 
+                        alt={cert.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-4 flex items-center justify-center space-x-2 text-cyber-glow text-sm">
+                      <span>View Certificate</span>
+                      <ExternalLink className="w-4 h-4" />
                     </div>
                   </button>
                 ) : (
@@ -202,15 +204,17 @@ const Skills = () => {
             </div>
             
             <Dialog open={!!selectedCert} onOpenChange={() => setSelectedCert(null)}>
-              <DialogContent className="max-w-4xl h-[80vh]">
+              <DialogContent className="max-w-6xl max-h-[90vh]">
                 <DialogHeader>
-                  <DialogTitle>Certificate Viewer</DialogTitle>
+                  <DialogTitle>Certificate</DialogTitle>
                 </DialogHeader>
-                <iframe 
-                  src={selectedCert || ''} 
-                  className="w-full h-full rounded-lg"
-                  title="Certificate PDF"
-                />
+                <div className="w-full h-[75vh] overflow-auto">
+                  <img 
+                    src={selectedCert || ''} 
+                    alt="Certificate"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
               </DialogContent>
             </Dialog>
             
