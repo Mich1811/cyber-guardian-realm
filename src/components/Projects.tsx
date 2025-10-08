@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Github, ExternalLink, Shield, Server, Flag, Bug, ChevronRight, Eye } from 'lucide-react';
+import { Github, ExternalLink, Shield, Server, Flag, Bug, ChevronRight, Eye, Globe } from 'lucide-react';
 import { useState } from 'react';
 import projectsBg from '@/assets/projects-cyber-bg.jpg';
 
@@ -23,6 +23,23 @@ const Projects = () => {
         'Vulnerability identification',
         'Security recommendations',
         'Compliance documentation'
+      ]
+    },
+    {
+      title: 'Secure Barber Shop Web App (LAMP Stack)',
+      description: 'Full-stack web application built with LAMP stack (Linux, Apache, MySQL, PHP) featuring secure authentication, appointment booking system, and admin dashboard with focus on security best practices.',
+      icon: Globe,
+      iconColor: 'text-cyan-500',
+      iconBgColor: 'bg-cyan-500/20',
+      iconBgHover: 'group-hover:bg-cyan-500/40',
+      technologies: ['PHP', 'MySQL', 'Apache', 'Linux', 'HTML/CSS', 'JavaScript'],
+      github: 'https://github.com/Mich1811/barber-shop',
+      category: 'Web Development',
+      highlights: [
+        'Secure user authentication',
+        'Appointment management system',
+        'Admin dashboard',
+        'SQL injection prevention'
       ]
     },
     {
@@ -173,8 +190,10 @@ const Projects = () => {
                       {index === 0 
                         ? "Professional penetration testing reports demonstrating systematic security assessment methodologies, from reconnaissance to exploitation and remediation, following industry-standard frameworks and best practices."
                         : index === 1
-                        ? "This comprehensive lab environment has enabled practical skill development in breach simulation, detection engineering, and incident response workflows, providing hands-on experience with enterprise security tools."
+                        ? "A secure web application demonstrating practical implementation of security principles in a LAMP stack environment, including input validation, prepared statements, session management, and secure password handling using industry-standard hashing algorithms."
                         : index === 2
+                        ? "This comprehensive lab environment has enabled practical skill development in breach simulation, detection engineering, and incident response workflows, providing hands-on experience with enterprise security tools."
+                        : index === 3
                         ? "Demonstrates vulnerability research capabilities and exploit development skills, with focus on adapting existing exploits for modern environments and ensuring compatibility across different system configurations."
                         : "These detailed walkthroughs have contributed to the cybersecurity community by documenting methodical approaches to complex security challenges, helping others learn practical problem-solving techniques."
                       }
