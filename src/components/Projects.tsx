@@ -12,6 +12,9 @@ const Projects = () => {
       title: 'Professional Penetration Testing',
       description: 'Comprehensive penetration test reports documenting security assessments performed on authorized systems. Includes vulnerability analysis, exploitation techniques, and detailed remediation recommendations.',
       icon: Shield,
+      iconColor: 'text-red-500',
+      iconBgColor: 'bg-red-500/20',
+      iconBgHover: 'group-hover:bg-red-500/40',
       technologies: ['Penetration Testing', 'Vulnerability Assessment', 'Security Auditing', 'Risk Analysis'],
       github: 'https://github.com/Mich1811/Penetration-Test',
       category: 'Security Assessment',
@@ -26,6 +29,9 @@ const Projects = () => {
       title: 'Cybersecurity Home Lab',
       description: 'Comprehensive home lab environment for breach simulations and detection skill building. Features host-only 10.10.10.0/24 network with Wazuh SIEM, DVWA targets, Windows 10 endpoint, and Kali Linux attacker machine.',
       icon: Server,
+      iconColor: 'text-purple-500',
+      iconBgColor: 'bg-purple-500/20',
+      iconBgHover: 'group-hover:bg-purple-500/40',
       technologies: ['Wazuh SIEM', 'DVWA', 'Kali Linux', 'Windows 10', 'Network Security'],
       github: 'https://github.com/Mich1811/Home-lab',
       category: 'Infrastructure',
@@ -40,6 +46,9 @@ const Projects = () => {
       title: 'CVE Exploit Development',
       description: 'Custom exploit for CVE-2019-9053, adapted for Python 3 with enhanced compatibility for different text encodings. Compatible with CMSMS version 2.2.9 and below.',
       icon: Bug,
+      iconColor: 'text-green-500',
+      iconBgColor: 'bg-green-500/20',
+      iconBgHover: 'group-hover:bg-green-500/40',
       technologies: ['Python 3', 'Exploit Development', 'CVE Research', 'CMSMS'],
       github: 'https://github.com/Mich1811/CVE-2019-9053-Exploit-Python-3',
       category: 'Vulnerability Research',
@@ -54,6 +63,9 @@ const Projects = () => {
       title: 'CTF Walkthroughs',
       description: 'Detailed documentation and solutions for Capture The Flag challenges, showcasing problem-solving approaches and security analysis techniques.',
       icon: Flag,
+      iconColor: 'text-amber-500',
+      iconBgColor: 'bg-amber-500/20',
+      iconBgHover: 'group-hover:bg-amber-500/40',
       technologies: ['CTF', 'Documentation', 'Security Analysis', 'Problem Solving'],
       github: 'https://github.com/Mich1811/CTF-walkthroughs',
       category: 'Security Analysis',
@@ -97,8 +109,8 @@ const Projects = () => {
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-cyber-blue/20 rounded-lg flex items-center justify-center hover-scale group-hover:bg-cyber-blue/40 transition-all duration-300">
-                      <project.icon className="w-6 h-6 text-cyber-blue group-hover:text-white transition-colors duration-300" />
+                    <div className={`w-12 h-12 ${project.iconBgColor} rounded-lg flex items-center justify-center hover-scale ${project.iconBgHover} transition-all duration-300`}>
+                      <project.icon className={`w-6 h-6 ${project.iconColor} group-hover:text-white transition-colors duration-300`} />
                     </div>
                     <div>
                       <CardTitle className="text-xl font-bold text-foreground group-hover:text-cyber-glow transition-colors duration-300">{project.title}</CardTitle>
