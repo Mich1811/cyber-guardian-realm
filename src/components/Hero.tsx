@@ -5,17 +5,10 @@ import heroImage from '@/assets/cyber-hero.jpg';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isTyping, setIsTyping] = useState(true);
   const [isDeleting, setIsDeleting] = useState(false);
   const [displayText, setDisplayText] = useState('');
-  const [titleIndex, setTitleIndex] = useState(0);
   
-  const titles = [
-    'Cybersecurity Analyst',
-    'Penetration Tester',
-    'Threat Hunter',
-    'Security Researcher'
-  ];
+  const title = 'Cybersecurity Analyst';
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -27,15 +20,14 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    const currentTitle = titles[titleIndex];
     let timer: NodeJS.Timeout;
 
-    if (!isDeleting && displayText.length < currentTitle.length) {
+    if (!isDeleting && displayText.length < title.length) {
       // Typing
       timer = setTimeout(() => {
-        setDisplayText(currentTitle.slice(0, displayText.length + 1));
+        setDisplayText(title.slice(0, displayText.length + 1));
       }, 100);
-    } else if (!isDeleting && displayText.length === currentTitle.length) {
+    } else if (!isDeleting && displayText.length === title.length) {
       // Pause before deleting
       timer = setTimeout(() => {
         setIsDeleting(true);
@@ -43,16 +35,15 @@ const Hero = () => {
     } else if (isDeleting && displayText.length > 0) {
       // Deleting
       timer = setTimeout(() => {
-        setDisplayText(currentTitle.slice(0, displayText.length - 1));
+        setDisplayText(title.slice(0, displayText.length - 1));
       }, 50);
     } else if (isDeleting && displayText.length === 0) {
-      // Move to next title
+      // Start typing again
       setIsDeleting(false);
-      setTitleIndex((prev) => (prev + 1) % titles.length);
     }
 
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, titleIndex]);
+  }, [displayText, isDeleting]);
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
