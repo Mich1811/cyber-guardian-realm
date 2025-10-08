@@ -5,9 +5,17 @@ import heroImage from '@/assets/cyber-hero.jpg';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isTyping, setIsTyping] = useState(false);
+  const [isTyping, setIsTyping] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [displayText, setDisplayText] = useState('');
-  const fullText = 'Cybersecurity Analyst';
+  const [titleIndex, setTitleIndex] = useState(0);
+  
+  const titles = [
+    'Cybersecurity Analyst',
+    'Penetration Tester',
+    'Threat Hunter',
+    'Security Researcher'
+  ];
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -19,20 +27,32 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    setIsTyping(true);
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index < fullText.length) {
-        setDisplayText(fullText.slice(0, index + 1));
-        index++;
-      } else {
-        setIsTyping(false);
-        clearInterval(timer);
-      }
-    }, 100);
+    const currentTitle = titles[titleIndex];
+    let timer: NodeJS.Timeout;
 
-    return () => clearInterval(timer);
-  }, []);
+    if (!isDeleting && displayText.length < currentTitle.length) {
+      // Typing
+      timer = setTimeout(() => {
+        setDisplayText(currentTitle.slice(0, displayText.length + 1));
+      }, 100);
+    } else if (!isDeleting && displayText.length === currentTitle.length) {
+      // Pause before deleting
+      timer = setTimeout(() => {
+        setIsDeleting(true);
+      }, 2000);
+    } else if (isDeleting && displayText.length > 0) {
+      // Deleting
+      timer = setTimeout(() => {
+        setDisplayText(currentTitle.slice(0, displayText.length - 1));
+      }, 50);
+    } else if (isDeleting && displayText.length === 0) {
+      // Move to next title
+      setIsDeleting(false);
+      setTitleIndex((prev) => (prev + 1) % titles.length);
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, titleIndex]);
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -100,10 +120,10 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-stagger-1">
               <span className="gradient-text">Nicholas Oyaro</span>
             </h1>
-            <div className="text-2xl md:text-3xl text-cyber-glow font-semibold animate-stagger-2 min-h-[3rem] flex items-center justify-center">
-              <span className="relative">
+            <div className="text-2xl md:text-3xl font-semibold animate-stagger-2 min-h-[3rem] flex items-center justify-center">
+              <span className="relative gradient-text">
                 {displayText}
-                {isTyping && <span className="animate-pulse">|</span>}
+                <span className="animate-pulse text-cyber-glow">|</span>
               </span>
             </div>
           </div>
