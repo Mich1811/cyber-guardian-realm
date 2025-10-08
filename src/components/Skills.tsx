@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Shield, Target, Search, Code, Network, Terminal, Eye, FileSearch, TrendingUp, TriangleAlert, Lock, FileText, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import React from 'react';
@@ -8,6 +9,7 @@ import React from 'react';
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('security');
   const [animatedBars, setAnimatedBars] = useState(false);
+  const [selectedCert, setSelectedCert] = useState<string | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimatedBars(true), 500);
@@ -158,9 +160,9 @@ const Skills = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {certifications.map((cert, index) => (
                 cert.file ? (
-                  <a
+                  <button
                     key={index}
-                    href={cert.file}
+                    onClick={() => setSelectedCert(cert.file)}
                     className={`group cyber-border rounded-lg p-6 bg-gradient-to-br from-card to-card/50 card-hover glow-on-hover animate-stagger-${Math.min(index + 1, 4)} cursor-pointer transition-all duration-300 hover:scale-105`}
                   >
                     <div className="flex flex-col items-center text-center space-y-3">
@@ -177,7 +179,7 @@ const Skills = () => {
                         <ExternalLink className="w-4 h-4" />
                       </div>
                     </div>
-                  </a>
+                  </button>
                 ) : (
                   <div
                     key={index}
@@ -198,6 +200,19 @@ const Skills = () => {
                 )
               ))}
             </div>
+            
+            <Dialog open={!!selectedCert} onOpenChange={() => setSelectedCert(null)}>
+              <DialogContent className="max-w-4xl h-[80vh]">
+                <DialogHeader>
+                  <DialogTitle>Certificate Viewer</DialogTitle>
+                </DialogHeader>
+                <iframe 
+                  src={selectedCert || ''} 
+                  className="w-full h-full rounded-lg"
+                  title="Certificate PDF"
+                />
+              </DialogContent>
+            </Dialog>
             
             <div className="bg-cyber-blue/10 border border-cyber-blue/30 rounded-lg p-4 card-hover animate-slide-in-up">
               <div className="flex items-center space-x-3">
